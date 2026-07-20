@@ -1,0 +1,67 @@
+('C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+ 'py\\CANARIS Controller Manager\\build\\CANARIS CM\\CANARIS CM.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\build\\CANARIS CM\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\build\\CANARIS CM\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\build\\CANARIS '
+   'CM\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\build\\CANARIS '
+   'CM\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\build\\CANARIS '
+   'CM\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\build\\CANARIS '
+   'CM\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pyside6',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyside6.py',
+   'PYSOURCE'),
+  ('main',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\main.py',
+   'PYSOURCE')],
+ 'python313.dll',
+ True,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)
