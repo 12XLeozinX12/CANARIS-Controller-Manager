@@ -113,17 +113,13 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\core\\app_data.py',
    'PYMODULE'),
-  ('core.button_mapper',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\core\\button_mapper.py',
-   'PYMODULE'),
   ('core.controller_manager',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\core\\controller_manager.py',
    'PYMODULE'),
-  ('core.controller_profile',
+  ('core.downloader',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\core\\controller_profile.py',
+   'py\\CANARIS Controller Manager\\core\\downloader.py',
    'PYMODULE'),
   ('core.language_manager',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -330,9 +326,17 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\gui\\styles.py',
    'PYMODULE'),
+  ('gui.update_window',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\gui\\update_window.py',
+   'PYMODULE'),
   ('gui.widgets',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\gui\\widgets\\__init__.py',
+   'PYMODULE'),
+  ('gui.widgets.axis_bar',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\gui\\widgets\\axis_bar.py',
    'PYMODULE'),
   ('gui.widgets.card',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -342,13 +346,13 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\gui\\widgets\\controller_visual.py',
    'PYMODULE'),
-  ('gui.widgets.input_button',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\gui\\widgets\\input_button.py',
-   'PYMODULE'),
   ('gui.widgets.sidebar_button',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\gui\\widgets\\sidebar_button.py',
+   'PYMODULE'),
+  ('gui.widgets.trigger_bar',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\gui\\widgets\\trigger_bar.py',
    'PYMODULE'),
   ('gzip',
    'C:\\Program '

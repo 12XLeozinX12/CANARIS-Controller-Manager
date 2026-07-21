@@ -1,18 +1,24 @@
 import sys
 
-from PySide6.QtWidgets import (
-    QApplication,
-    QMessageBox
-)
 
+from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtGui import QIcon
 
+
+
 from gui.main_window import MainWindow
-from gui.update_window import UpdateWindow
+
 
 from core.logger import CanarisLogger
+
 from core.update_manager import update
-from core.downloader import Downloader
+
+from core.settings_manager import settings
+
+from core.theme_manager import theme
+
+from core.paths import resource_path
+
 
 
 
@@ -20,12 +26,26 @@ from core.downloader import Downloader
 def main():
 
 
+
+    # =========================
+    # LOGGER
+    # =========================
+
+
     logger = CanarisLogger()
+
 
     logger.info(
         "CANARIS iniciado."
     )
 
+
+
+
+
+    # =========================
+    # APP QT
+    # =========================
 
 
     app = QApplication(
@@ -34,88 +54,109 @@ def main():
 
 
 
+
+
+
+    # =========================
+    # ÍCONE
+    # =========================
+
+
     app.setWindowIcon(
+
         QIcon(
-            "assets/icons/canaris.ico"
+
+            resource_path(
+
+                "assets/icons/canaris.ico"
+
+            )
+
         )
+
     )
 
 
 
 
 
-    # ==========================
+
+
+    # =========================
+    # CARREGAR TEMA
+    # =========================
+
+
+    tema_atual = settings.get(
+
+        "tema"
+
+    )
+
+
+
+    theme.aplicar(
+
+        app,
+
+        tema_atual
+
+    )
+
+
+
+
+
+
+
+
+
+    # =========================
     # ATUALIZAÇÃO
-    # ==========================
+    # =========================
 
 
     try:
 
 
-        resultado = (
-            update
-            .verificar_atualizacao()
-        )
+        resultado = update.verificar_atualizacao()
 
 
 
         if resultado.get(
+
             "update",
+
             False
+
         ):
 
 
-            janela = UpdateWindow(
 
-                resultado["version"]
+            QMessageBox.information(
 
-            )
+                None,
 
+                "CANARIS ™ CM",
 
-            janela.show()
+                f"""
 
+Nova versão disponível:
 
-
-            def iniciar_download():
-
-
-                downloader = Downloader()
+{resultado['version']}
 
 
+Versão atual:
 
-                downloader.baixar(
-
-                    resultado["download"],
-
-                    "CANARIS_UPDATE.exe",
-
-                    janela.progress.setValue
-
-                )
+BETA 0.1.2
 
 
+Atualize para continuar usando
+a versão mais recente.
 
-                janela.info.setText(
-
-                    """
-Atualização concluída!
-
-Reinicie o CANARIS.
 """
 
-                )
-
-
-
-            janela.button.clicked.connect(
-                iniciar_download
             )
-
-
-
-            janela.exec()
-
-
 
 
 
@@ -123,7 +164,9 @@ Reinicie o CANARIS.
 
 
         logger.error(
-            f"Erro atualização: {erro}"
+
+            f"Erro no sistema de atualização: {erro}"
+
         )
 
 
@@ -132,9 +175,11 @@ Reinicie o CANARIS.
 
 
 
-    # ==========================
-    # ABRIR APP
-    # ==========================
+
+
+    # =========================
+    # JANELA PRINCIPAL
+    # =========================
 
 
     window = MainWindow()
@@ -144,8 +189,18 @@ Reinicie o CANARIS.
 
 
 
+
+
+
+    # =========================
+    # EXECUTAR
+    # =========================
+
+
     sys.exit(
+
         app.exec()
+
     )
 
 
@@ -153,6 +208,10 @@ Reinicie o CANARIS.
 
 
 
+
+
+
 if __name__ == "__main__":
+
 
     main()

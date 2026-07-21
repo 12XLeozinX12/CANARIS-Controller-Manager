@@ -1,87 +1,144 @@
-import os
 import sys
-import urllib.request
-import subprocess
-import time
 
 
-
-DOWNLOAD_URL = (
-    "https://SEU-SERVIDOR.com/CANARIS_CM_Setup.exe"
+from PySide6.QtWidgets import (
+    QApplication
 )
 
 
-ARQUIVO = (
-    "CANARIS_CM_Update.exe"
-)
+from PySide6.QtGui import QIcon
+
+
+from gui.main_window import MainWindow
+
+
+from gui.update_window import UpdateWindow
+
+
+from core.update_manager import update
+
+
+from core.downloader import Downloader
+
+
+from core.logger import CanarisLogger
 
 
 
-def baixar_atualizacao():
 
 
-    print(
-        "Baixando atualização..."
+def main():
+
+
+
+    logger = CanarisLogger()
+
+
+    logger.info(
+        "CANARIS iniciado"
     )
 
 
-    urllib.request.urlretrieve(
-        DOWNLOAD_URL,
-        ARQUIVO
+
+    app = QApplication(
+        sys.argv
     )
 
 
 
-def instalar():
+    app.setWindowIcon(
 
-
-    print(
-        "Abrindo instalador..."
-    )
-
-
-    subprocess.Popen(
-        [
-            ARQUIVO
-        ]
-    )
-
-
-
-def iniciar_programa():
-
-
-    caminho = (
-        "CANARIS CM.exe"
-    )
-
-
-    if os.path.exists(
-        caminho
-    ):
-
-
-        subprocess.Popen(
-            [
-                caminho
-            ]
+        QIcon(
+            "assets/icons/canaris.ico"
         )
 
+    )
 
 
-if __name__ == "__main__":
 
 
     try:
 
 
-        baixar_atualizacao()
+        resultado = (
+
+            update
+            .verificar_atualizacao()
+
+        )
 
 
-        time.sleep(2)
+
+        if resultado["update"]:
 
 
-        instalar()
+            janela = UpdateWindow(
+
+                resultado["version"]
+
+            )
+
+
+
+            janela.info.setText(
+
+f"""
+Nova versão:
+
+{resultado['version']}
+
+
+Alterações:
+
+"""
++
+"\n".join(
+    resultado["changelog"]
+)
+
+            )
+
+
+
+
+            def baixar():
+
+
+                downloader = Downloader()
+
+
+
+                downloader.baixar(
+
+                    resultado["download"],
+
+                    "CANARIS_NEW.exe",
+
+                    janela.progress.setValue
+
+                )
+
+
+
+                janela.info.setText(
+
+                    "Atualização baixada!"
+
+                )
+
+
+
+
+
+            janela.button.clicked.connect(
+
+                baixar
+
+            )
+
+
+
+            janela.exec()
 
 
 
@@ -89,5 +146,29 @@ if __name__ == "__main__":
 
 
         print(
+            "Update falhou:",
             erro
         )
+
+
+
+
+
+    window = MainWindow()
+
+
+    window.show()
+
+
+
+    sys.exit(
+        app.exec()
+    )
+
+
+
+
+
+if __name__ == "__main__":
+
+    main()

@@ -26,6 +26,7 @@ imports:
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#copyreg">copyreg</a>
+ &#8226;   <a href="#core.downloader">core.downloader</a>
  &#8226;   <a href="#core.logger">core.logger</a>
  &#8226;   <a href="#core.update_manager">core.update_manager</a>
  &#8226;   <a href="#encodings">encodings</a>
@@ -154,6 +155,7 @@ imports:
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#gui.main_window">gui.main_window</a>
+ &#8226;   <a href="#gui.update_window">gui.update_window</a>
  &#8226;   <a href="#heapq">heapq</a>
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#keyword">keyword</a>
@@ -345,9 +347,12 @@ imported by:
  &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
  &#8226;   <a href="#core.language_manager">core.language_manager</a>
  &#8226;   <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
+ &#8226;   <a href="#gui.update_window">gui.update_window</a>
+ &#8226;   <a href="#gui.widgets.axis_bar">gui.widgets.axis_bar</a>
+ &#8226;   <a href="#gui.widgets.card">gui.widgets.card</a>
  &#8226;   <a href="#gui.widgets.controller_visual">gui.widgets.controller_visual</a>
- &#8226;   <a href="#gui.widgets.input_button">gui.widgets.input_button</a>
  &#8226;   <a href="#gui.widgets.sidebar_button">gui.widgets.sidebar_button</a>
+ &#8226;   <a href="#gui.widgets.trigger_bar">gui.widgets.trigger_bar</a>
 
   </div>
 
@@ -373,7 +378,9 @@ imported by:
     <a href="#PySide6.QtGui">PySide6.QtGui</a>
  &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
  &#8226;   <a href="#gui.main_window">gui.main_window</a>
- &#8226;   <a href="#gui.widgets.input_button">gui.widgets.input_button</a>
+ &#8226;   <a href="#gui.widgets.axis_bar">gui.widgets.axis_bar</a>
+ &#8226;   <a href="#gui.widgets.controller_visual">gui.widgets.controller_visual</a>
+ &#8226;   <a href="#gui.widgets.trigger_bar">gui.widgets.trigger_bar</a>
  &#8226;   <a href="#main.py">main.py</a>
 
   </div>
@@ -431,10 +438,12 @@ imported by:
  &#8226;   <a href="#gui.pages.dashboard">gui.pages.dashboard</a>
  &#8226;   <a href="#gui.pages.profiles">gui.pages.profiles</a>
  &#8226;   <a href="#gui.pages.sobre">gui.pages.sobre</a>
+ &#8226;   <a href="#gui.update_window">gui.update_window</a>
+ &#8226;   <a href="#gui.widgets.axis_bar">gui.widgets.axis_bar</a>
  &#8226;   <a href="#gui.widgets.card">gui.widgets.card</a>
  &#8226;   <a href="#gui.widgets.controller_visual">gui.widgets.controller_visual</a>
- &#8226;   <a href="#gui.widgets.input_button">gui.widgets.input_button</a>
  &#8226;   <a href="#gui.widgets.sidebar_button">gui.widgets.sidebar_button</a>
+ &#8226;   <a href="#gui.widgets.trigger_bar">gui.widgets.trigger_bar</a>
  &#8226;   <a href="#main.py">main.py</a>
 
   </div>
@@ -1993,9 +2002,8 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
     <a href="#core.app_data">core.app_data</a>
- &#8226;   <a href="#core.button_mapper">core.button_mapper</a>
  &#8226;   <a href="#core.controller_manager">core.controller_manager</a>
- &#8226;   <a href="#core.controller_profile">core.controller_profile</a>
+ &#8226;   <a href="#core.downloader">core.downloader</a>
  &#8226;   <a href="#core.language_manager">core.language_manager</a>
  &#8226;   <a href="#core.logger">core.logger</a>
  &#8226;   <a href="#core.paths">core.paths</a>
@@ -2027,22 +2035,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="core.button_mapper"></a>
-  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/core/button_mapper.py" type="text/plain"><tt>core.button_mapper</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#core">core</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="core.controller_manager"></a>
   <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/core/controller_manager.py" type="text/plain"><tt>core.controller_manager</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -2062,16 +2054,17 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="core.controller_profile"></a>
-  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/core/controller_profile.py" type="text/plain"><tt>core.controller_profile</tt></a>
+  <a name="core.downloader"></a>
+  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/core/downloader.py" type="text/plain"><tt>core.downloader</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#core">core</a>
+ &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
+    <a href="#main.py">main.py</a>
 
   </div>
 
@@ -2092,7 +2085,6 @@ imported by:
     <a href="#gui.main_window">gui.main_window</a>
  &#8226;   <a href="#gui.pages.config">gui.pages.config</a>
  &#8226;   <a href="#gui.pages.controles">gui.pages.controles</a>
- &#8226;   <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
  &#8226;   <a href="#gui.pages.dashboard">gui.pages.dashboard</a>
  &#8226;   <a href="#gui.pages.profiles">gui.pages.profiles</a>
  &#8226;   <a href="#gui.pages.sobre">gui.pages.sobre</a>
@@ -2162,6 +2154,7 @@ imported by:
 imports:
     <a href="#core">core</a>
  &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -5648,6 +5641,7 @@ imported by:
  &#8226;   <a href="#gui.main_window">gui.main_window</a>
  &#8226;   <a href="#gui.pages">gui.pages</a>
  &#8226;   <a href="#gui.styles">gui.styles</a>
+ &#8226;   <a href="#gui.update_window">gui.update_window</a>
  &#8226;   <a href="#gui.widgets">gui.widgets</a>
 
   </div>
@@ -5780,12 +5774,11 @@ imported by:
 imports:
     <a href="#PySide6.QtCore">PySide6.QtCore</a>
  &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
- &#8226;   <a href="#core.button_mapper">core.button_mapper</a>
  &#8226;   <a href="#core.controller_manager">core.controller_manager</a>
- &#8226;   <a href="#core.controller_profile">core.controller_profile</a>
- &#8226;   <a href="#core.language_manager">core.language_manager</a>
  &#8226;   <a href="#gui.pages">gui.pages</a>
+ &#8226;   <a href="#gui.widgets.axis_bar">gui.widgets.axis_bar</a>
  &#8226;   <a href="#gui.widgets.controller_visual">gui.widgets.controller_visual</a>
+ &#8226;   <a href="#gui.widgets.trigger_bar">gui.widgets.trigger_bar</a>
 
   </div>
   <div class="import">
@@ -5872,6 +5865,24 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="gui.update_window"></a>
+  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/gui/update_window.py" type="text/plain"><tt>gui.update_window</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PySide6.QtCore">PySide6.QtCore</a>
+ &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
+ &#8226;   <a href="#gui">gui</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="gui.widgets"></a>
   <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/gui/widgets/__init__.py" type="text/plain"><tt>gui.widgets</tt></a>
 <span class="moduletype">Package</span>  <div class="import">
@@ -5881,10 +5892,30 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#gui.widgets.card">gui.widgets.card</a>
+    <a href="#gui.widgets.axis_bar">gui.widgets.axis_bar</a>
+ &#8226;   <a href="#gui.widgets.card">gui.widgets.card</a>
  &#8226;   <a href="#gui.widgets.controller_visual">gui.widgets.controller_visual</a>
- &#8226;   <a href="#gui.widgets.input_button">gui.widgets.input_button</a>
  &#8226;   <a href="#gui.widgets.sidebar_button">gui.widgets.sidebar_button</a>
+ &#8226;   <a href="#gui.widgets.trigger_bar">gui.widgets.trigger_bar</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="gui.widgets.axis_bar"></a>
+  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/gui/widgets/axis_bar.py" type="text/plain"><tt>gui.widgets.axis_bar</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PySide6.QtCore">PySide6.QtCore</a>
+ &#8226;   <a href="#PySide6.QtGui">PySide6.QtGui</a>
+ &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
+ &#8226;   <a href="#gui.widgets">gui.widgets</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
 
   </div>
 
@@ -5895,7 +5926,8 @@ imported by:
   <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/gui/widgets/card.py" type="text/plain"><tt>gui.widgets.card</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
+    <a href="#PySide6.QtCore">PySide6.QtCore</a>
+ &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
  &#8226;   <a href="#gui.widgets">gui.widgets</a>
 
   </div>
@@ -5913,25 +5945,6 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#PySide6.QtCore">PySide6.QtCore</a>
- &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
- &#8226;   <a href="#gui.widgets">gui.widgets</a>
- &#8226;   <a href="#gui.widgets.input_button">gui.widgets.input_button</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="gui.widgets.input_button"></a>
-  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/gui/widgets/input_button.py" type="text/plain"><tt>gui.widgets.input_button</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#PySide6.QtCore">PySide6.QtCore</a>
  &#8226;   <a href="#PySide6.QtGui">PySide6.QtGui</a>
  &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
  &#8226;   <a href="#gui.widgets">gui.widgets</a>
@@ -5939,7 +5952,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#gui.widgets.controller_visual">gui.widgets.controller_visual</a>
+    <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
 
   </div>
 
@@ -5958,6 +5971,25 @@ imports:
   <div class="import">
 imported by:
     <a href="#gui.main_window">gui.main_window</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="gui.widgets.trigger_bar"></a>
+  <a target="code" href="///C:/Users/Computador/OneDrive/Documentos/Curso%20Phyton/projetos%20py/CANARIS%20Controller%20Manager/gui/widgets/trigger_bar.py" type="text/plain"><tt>gui.widgets.trigger_bar</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PySide6.QtCore">PySide6.QtCore</a>
+ &#8226;   <a href="#PySide6.QtGui">PySide6.QtGui</a>
+ &#8226;   <a href="#PySide6.QtWidgets">PySide6.QtWidgets</a>
+ &#8226;   <a href="#gui.widgets">gui.widgets</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#gui.pages.controller_lab">gui.pages.controller_lab</a>
 
   </div>
 
@@ -7239,6 +7271,7 @@ imported by:
  &#8226;   <a href="#core.logger">core.logger</a>
  &#8226;   <a href="#core.paths">core.paths</a>
  &#8226;   <a href="#core.profile_manager">core.profile_manager</a>
+ &#8226;   <a href="#core.update_manager">core.update_manager</a>
  &#8226;   <a href="#core.version_manager">core.version_manager</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#email.utils">email.utils</a>
@@ -9735,7 +9768,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#core.update_manager">core.update_manager</a>
+    <a href="#core.downloader">core.downloader</a>
+ &#8226;   <a href="#core.update_manager">core.update_manager</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
 
   </div>

@@ -85,7 +85,7 @@
  [],
  False,
  False,
- 1784580778,
+ 1784590206,
  [('runw.exe',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '

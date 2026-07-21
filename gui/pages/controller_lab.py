@@ -21,6 +21,9 @@ class ControllerLab(QWidget):
 
 
     def __init__(self):
+        from core.controller_debug import ControllerDebug
+        self.debug = ControllerDebug()
+
 
         super().__init__()
 
@@ -29,6 +32,7 @@ class ControllerLab(QWidget):
 
 
         self.init_ui()
+
 
 
         self.timer = QTimer()
@@ -45,8 +49,9 @@ class ControllerLab(QWidget):
 
 
 
-    def create_card(self):
 
+
+    def create_card(self):
 
         frame = QFrame()
 
@@ -54,16 +59,16 @@ class ControllerLab(QWidget):
         frame.setStyleSheet(
             """
             QFrame{
-
                 background:#171717;
                 border-radius:20px;
-
             }
             """
         )
 
 
         return frame
+
+
 
 
 
@@ -77,17 +82,8 @@ class ControllerLab(QWidget):
         )
 
 
-        layout.setContentsMargins(
-            25,
-            25,
-            25,
-            25
-        )
-
-
-
         titulo = QLabel(
-            "🎮 CANARIS ™ Controller Lab 2.0"
+            "🎮 CANARIS ™ Controller Lab"
         )
 
 
@@ -112,29 +108,24 @@ class ControllerLab(QWidget):
 
 
 
-        # ======================
-        # VISUAL CONTROLE
-        # ======================
+        card_visual = self.create_card()
 
 
-        controle_card = self.create_card()
-
-
-        controle_layout = QVBoxLayout(
-            controle_card
+        visual_layout = QVBoxLayout(
+            card_visual
         )
 
 
         self.visual = ControllerVisual()
 
 
-        controle_layout.addWidget(
+        visual_layout.addWidget(
             self.visual
         )
 
 
         area.addWidget(
-            controle_card,
+            card_visual,
             2
         )
 
@@ -143,16 +134,12 @@ class ControllerLab(QWidget):
 
 
 
-        # ======================
-        # PAINEL
-        # ======================
+
+        card_info = self.create_card()
 
 
-        painel_card = self.create_card()
-
-
-        painel_layout = QVBoxLayout(
-            painel_card
+        info_layout = QVBoxLayout(
+            card_info
         )
 
 
@@ -163,14 +150,11 @@ class ControllerLab(QWidget):
 
 
         self.info.setStyleSheet(
-            """
-            color:white;
-            font-size:16px;
-            """
+            "color:white;font-size:16px;"
         )
 
 
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.info
         )
 
@@ -198,30 +182,23 @@ class ControllerLab(QWidget):
 
 
 
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.axis_x
         )
 
-
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.axis_y
         )
 
-
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.axis_rx
         )
 
-
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.axis_ry
         )
 
 
-
-
-
-        # TRIGGERS
 
 
         self.trigger_l2 = TriggerBar(
@@ -234,13 +211,12 @@ class ControllerLab(QWidget):
         )
 
 
-
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.trigger_l2
         )
 
 
-        painel_layout.addWidget(
+        info_layout.addWidget(
             self.trigger_r2
         )
 
@@ -248,52 +224,25 @@ class ControllerLab(QWidget):
 
 
 
-        # VIBRAÇÃO
-
-
-        self.rumble_button = QPushButton(
+        self.rumble = QPushButton(
             "💥 TESTAR VIBRAÇÃO"
         )
 
 
-        self.rumble_button.setStyleSheet(
-            """
-            QPushButton{
-
-                background:#8B5CF6;
-                color:white;
-                border-radius:12px;
-                padding:12px;
-                font-size:16px;
-                font-weight:bold;
-
-            }
-
-
-            QPushButton:hover{
-
-                background:#A855F7;
-
-            }
-            """
-        )
-
-
-
-        self.rumble_button.clicked.connect(
+        self.rumble.clicked.connect(
             self.testar_vibracao
         )
 
 
-
-        painel_layout.addWidget(
-            self.rumble_button
+        info_layout.addWidget(
+            self.rumble
         )
 
 
 
+
         area.addWidget(
-            painel_card,
+            card_info,
             1
         )
 
@@ -308,6 +257,9 @@ class ControllerLab(QWidget):
 
 
 
+
+
+
     def update_controller(self):
 
 
@@ -315,14 +267,7 @@ class ControllerLab(QWidget):
 
 
 
-        info = estado.get(
-            "info",
-            {}
-        )
-
-
-
-        if not info.get(
+        if not estado["info"].get(
             "connected",
             False
         ):
@@ -334,7 +279,7 @@ class ControllerLab(QWidget):
 
 
             self.visual.set_buttons(
-                []
+                {}
             )
 
 
@@ -344,26 +289,23 @@ class ControllerLab(QWidget):
 
 
 
+
         self.info.setText(
 
-f"""
+            f"""
 🟢 ONLINE
 
 
 Nome:
-
-{info.get('nome')}
+{estado['info']['nome']}
 
 
 Tipo:
-
-{info.get('tipo')}
+{estado['info']['tipo']}
 
 
 GUID:
-
-{info.get('guid')}
-
+{estado['info']['guid']}
 """
 
         )
@@ -371,17 +313,26 @@ GUID:
 
 
 
-
-        botoes = estado.get(
-            "buttons",
-            []
-        )
+        # =====================
+        # BOTÕES
+        # =====================
 
 
         self.visual.set_buttons(
-            botoes
+
+            estado.get(
+                "buttons",
+                {}
+            )
+
         )
 
+
+
+
+        # =====================
+        # EIXOS
+        # =====================
 
 
         eixos = estado.get(
@@ -390,11 +341,9 @@ GUID:
         )
 
 
-
         self.visual.set_axes(
             eixos
         )
-
 
 
 
@@ -425,18 +374,27 @@ GUID:
 
 
 
+        triggers = estado.get(
+            "triggers",
+            {}
+        )
 
-        if len(eixos) >= 6:
 
-
-            self.trigger_l2.set_value(
-                eixos[4]
+        self.trigger_l2.set_value(
+            triggers.get(
+                "L2",
+                0
             )
+        )
 
 
-            self.trigger_r2.set_value(
-                eixos[5]
+        self.trigger_r2.set_value(
+            triggers.get(
+                "R2",
+                0
             )
+        )
+
 
 
 
@@ -447,36 +405,7 @@ GUID:
     def testar_vibracao(self):
 
 
-        try:
-
-
-            sucesso = self.manager.vibrar(
-                0.8,
-                600
-            )
-
-
-
-            if sucesso:
-
-
-                self.info.setText(
-                    "💥 Vibração ativada!"
-                )
-
-
-            else:
-
-
-                self.info.setText(
-                    "⚠️ Controle sem vibração"
-                )
-
-
-
-        except Exception as erro:
-
-
-            self.info.setText(
-                f"Erro vibração: {erro}"
-            )
+        self.manager.vibrar(
+            0.8,
+            600
+        )

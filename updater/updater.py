@@ -12,46 +12,32 @@ class CanarisUpdater:
 
     def __init__(self):
 
-
-        self.atual = (
+        self.programa_atual = (
             "CANARIS CM.exe"
         )
 
-
-        self.novo = (
-            "update/CANARIS_NEW.exe"
+        self.novo_programa = (
+            "CANARIS_NEW.exe"
         )
-
 
         self.backup = (
-            "backup/CANARIS_OLD.exe"
+            "CANARIS_BACKUP.exe"
         )
 
 
 
 
 
-    def criar_backup(self):
-
-
-        if not os.path.exists(
-            "backup"
-        ):
-
-            os.makedirs(
-                "backup"
-            )
-
-
+    def fazer_backup(self):
 
         if os.path.exists(
-            self.atual
+            self.programa_atual
         ):
 
 
-            shutil.copy(
+            shutil.copy2(
 
-                self.atual,
+                self.programa_atual,
 
                 self.backup
 
@@ -61,22 +47,19 @@ class CanarisUpdater:
 
 
 
-
-
-    def instalar(self):
+    def substituir(self):
 
 
         if not os.path.exists(
-            self.novo
+            self.novo_programa
         ):
-
 
             return False
 
 
 
 
-        self.criar_backup()
+        self.fazer_backup()
 
 
 
@@ -86,11 +69,22 @@ class CanarisUpdater:
 
 
 
+        if os.path.exists(
+            self.programa_atual
+        ):
+
+
+            os.remove(
+                self.programa_atual
+            )
+
+
+
         shutil.move(
 
-            self.novo,
+            self.novo_programa,
 
-            self.atual
+            self.programa_atual
 
         )
 
@@ -102,21 +96,18 @@ class CanarisUpdater:
 
 
 
+    def iniciar_programa(self):
 
 
-    def iniciar(self):
+        subprocess.Popen(
+
+            [
+                self.programa_atual
+            ]
+
+        )
 
 
-        if os.path.exists(
-            self.atual
-        ):
-
-
-            subprocess.Popen(
-                [
-                    self.atual
-                ]
-            )
 
 
 
@@ -130,7 +121,13 @@ if __name__ == "__main__":
 
 
 
-    if updater.instalar():
+    sucesso = (
+        updater.substituir()
+    )
 
 
-        updater.iniciar()
+
+    if sucesso:
+
+
+        updater.iniciar_programa()

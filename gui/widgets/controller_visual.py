@@ -1,5 +1,11 @@
 from PySide6.QtWidgets import QWidget
-from PySide6.QtGui import QPainter, QColor, QPen
+from PySide6.QtGui import (
+    QPainter,
+    QColor,
+    QPen,
+    QBrush,
+    QFont
+)
 from PySide6.QtCore import Qt
 
 
@@ -13,12 +19,12 @@ class ControllerVisual(QWidget):
 
 
         self.setMinimumSize(
-            500,
-            350
+            650,
+            420
         )
 
 
-        self.pressed_buttons = []
+        self.buttons = {}
 
 
         self.axes = [
@@ -29,16 +35,36 @@ class ControllerVisual(QWidget):
         ]
 
 
+        self.triggers = {
+
+            "L2":0,
+            "R2":0
+
+        }
+
+
+        self.dpad = {
+
+            "up":False,
+            "down":False,
+            "left":False,
+            "right":False
+
+        }
 
 
 
-    def set_buttons(
-        self,
-        buttons
-    ):
 
 
-        self.pressed_buttons = buttons
+    # ==========================
+    # RECEBER BOTÕES
+    # ==========================
+
+
+    def set_buttons(self,buttons):
+
+
+        self.buttons = buttons
 
 
         self.update()
@@ -47,23 +73,16 @@ class ControllerVisual(QWidget):
 
 
 
-    def set_axes(
-        self,
-        axes
-    ):
+    def set_axes(self,axes):
 
 
-        if len(axes) >= 4:
-
+        if len(axes)>=4:
 
             self.axes = [
 
                 axes[0],
-
                 axes[1],
-
                 axes[2],
-
                 axes[3]
 
             ]
@@ -75,77 +94,98 @@ class ControllerVisual(QWidget):
 
 
 
-
-    def is_pressed(
-        self,
-        button
-    ):
+    def set_triggers(self,triggers):
 
 
-        return button in self.pressed_buttons
+        self.triggers = triggers
 
+
+        self.update()
 
 
 
 
 
-    def draw_button(
+    def set_dpad(self,dpad):
+
+
+        self.dpad = dpad
+
+
+        self.update()
+
+
+
+
+
+    # ==========================
+    # BOTÃO
+    # ==========================
+
+
+    def pressed(self,id):
+
+        return self.buttons.get(id,False)
+
+
+
+
+    def button(
         self,
         painter,
         x,
         y,
-        radius,
         text,
-        index
+        id,
+        size=25
     ):
 
 
-        if self.is_pressed(index):
+        ativo = self.pressed(id)
 
+
+
+        if ativo:
 
             painter.setBrush(
-                QColor(
-                    "#8B5CF6"
-                )
+                QColor("#8B5CF6")
             )
-
 
         else:
 
-
             painter.setBrush(
-                QColor(
-                    "#252525"
-                )
+                QColor("#202020")
             )
 
 
 
         painter.setPen(
             QPen(
-                QColor("#FFFFFF"),
+                QColor("#777"),
                 2
             )
         )
 
 
         painter.drawEllipse(
-
-            x-radius,
-
-            y-radius,
-
-            radius*2,
-
-            radius*2
-
+            x-size,
+            y-size,
+            size*2,
+            size*2
         )
 
 
 
         painter.setPen(
-            QColor(
-                "#FFFFFF"
+            QColor("#FFFFFF")
+        )
+
+
+        painter.setFont(
+            QFont(
+                "Arial",
+                12,
+                QFont.Bold
             )
         )
 
@@ -160,17 +200,82 @@ class ControllerVisual(QWidget):
 
 
 
+    # ==========================
+    # TRIGGER BAR
+    # ==========================
 
 
-    def paintEvent(
+    def trigger_bar(
         self,
-        event
+        painter,
+        x,
+        y,
+        value,
+        name
     ):
 
 
-        painter = QPainter(
-            self
+        painter.setPen(
+            QColor("#555")
         )
+
+
+        painter.setBrush(
+            QColor("#151515")
+        )
+
+
+        painter.drawRoundedRect(
+            x,
+            y,
+            100,
+            15,
+            7,
+            7
+        )
+
+
+
+        painter.setBrush(
+            QColor("#8B5CF6")
+        )
+
+
+        painter.drawRoundedRect(
+            x,
+            y,
+            value,
+            15,
+            7,
+            7
+        )
+
+
+        painter.setPen(
+            QColor("#FFFFFF")
+        )
+
+
+        painter.drawText(
+            x,
+            y-8,
+            f"{name} {int(value)}%"
+        )
+
+
+
+
+
+
+    # ==========================
+    # DESENHO
+    # ==========================
+
+
+    def paintEvent(self,event):
+
+
+        painter = QPainter(self)
 
 
         painter.setRenderHint(
@@ -179,7 +284,18 @@ class ControllerVisual(QWidget):
 
 
 
-        # Corpo
+        # Fundo
+
+
+        painter.fillRect(
+            self.rect(),
+            QColor("#090909")
+        )
+
+
+
+
+        # Corpo controle
 
 
         painter.setBrush(
@@ -189,66 +305,61 @@ class ControllerVisual(QWidget):
 
         painter.setPen(
             QPen(
-                QColor("#333333"),
+                QColor("#333"),
                 3
             )
         )
 
 
         painter.drawRoundedRect(
+            120,
             80,
-            50,
-            340,
-            220,
-            80,
-            80
+            410,
+            260,
+            90,
+            90
         )
 
 
 
 
+        # =====================
+        # BOTÕES DIREITOS
+        # =====================
 
-        # ======================
-        # BOTÕES
-        # ======================
 
-
-        self.draw_button(
+        self.button(
             painter,
-            330,
-            120,
-            22,
+            450,
+            150,
             "△",
             3
         )
 
 
-        self.draw_button(
+        self.button(
             painter,
-            370,
-            160,
-            22,
+            500,
+            200,
             "○",
             1
         )
 
 
-        self.draw_button(
+        self.button(
             painter,
-            290,
-            160,
-            22,
+            400,
+            200,
             "□",
             2
         )
 
 
-        self.draw_button(
+        self.button(
             painter,
-            330,
-            200,
-            22,
-            "✕",
+            450,
+            250,
+            "X",
             0
         )
 
@@ -256,37 +367,29 @@ class ControllerVisual(QWidget):
 
 
 
-        # ======================
-        # ANALÓGICOS
-        # ======================
-
-
-        # LEFT STICK
-
-
-        left_x = (
-            177 +
-            self.axes[0] * 20
-        )
-
-
-        left_y = (
-            177 +
-            self.axes[1] * 20
-        )
-
+        # =====================
+        # STICKS
+        # =====================
 
 
         painter.setBrush(
-            QColor("#303030")
+            QColor("#222")
         )
 
 
         painter.drawEllipse(
-            145,
-            145,
-            65,
-            65
+            190,
+            170,
+            70,
+            70
+        )
+
+
+        painter.drawEllipse(
+            330,
+            240,
+            70,
+            70
         )
 
 
@@ -296,57 +399,22 @@ class ControllerVisual(QWidget):
         )
 
 
+
         painter.drawEllipse(
-            left_x-15,
-            left_y-15,
-            30,
-            30
+            215+self.axes[0]*20,
+            195+self.axes[1]*20,
+            20,
+            20
         )
 
-
-
-
-        # RIGHT STICK
-
-
-        right_x = (
-            277 +
-            self.axes[2] * 20
-        )
-
-
-        right_y = (
-            237 +
-            self.axes[3] * 20
-        )
-
-
-
-        painter.setBrush(
-            QColor("#303030")
-        )
 
 
         painter.drawEllipse(
-            245,
-            205,
-            65,
-            65
+            355+self.axes[2]*20,
+            265+self.axes[3]*20,
+            20,
+            20
         )
-
-
-        painter.setBrush(
-            QColor("#8B5CF6")
-        )
-
-
-        painter.drawEllipse(
-            right_x-15,
-            right_y-15,
-            30,
-            30
-        )
-
 
 
 
@@ -354,47 +422,160 @@ class ControllerVisual(QWidget):
         # L3 / R3
 
 
-        self.draw_button(
+        self.button(
             painter,
-            177,
-            177,
-            12,
+            225,
+            205,
             "L3",
-            7
+            7,
+            14
         )
 
 
-        self.draw_button(
+        self.button(
             painter,
-            277,
-            237,
-            12,
+            365,
+            275,
             "R3",
-            8
+            8,
+            14
         )
 
 
 
 
 
-        # Ombros
+
+        # =====================
+        # OMBROS
+        # =====================
 
 
-        self.draw_button(
+        self.button(
             painter,
-            130,
-            70,
-            18,
+            170,
+            90,
             "L1",
-            9
+            9,
+            22
         )
 
 
-        self.draw_button(
+        self.button(
             painter,
-            370,
-            70,
-            18,
+            480,
+            90,
             "R1",
-            5
+            10,
+            22
+        )
+
+
+
+
+        # =====================
+        # SHARE OPTIONS TOUCH
+        # =====================
+
+
+        self.button(
+            painter,
+            270,
+            120,
+            "SH",
+            4,
+            18
+        )
+
+
+        self.button(
+            painter,
+            380,
+            120,
+            "OP",
+            6,
+            18
+        )
+
+
+        self.button(
+            painter,
+            325,
+            160,
+            "TP",
+            15,
+            22
+        )
+
+
+
+
+        # =====================
+        # TRIGGERS
+        # =====================
+
+
+        self.trigger_bar(
+            painter,
+            170,
+            45,
+            self.triggers.get("L2",0),
+            "L2"
+        )
+
+
+        self.trigger_bar(
+            painter,
+            420,
+            45,
+            self.triggers.get("R2",0),
+            "R2"
+        )
+
+
+
+
+
+        # =====================
+        # DPAD
+        # =====================
+
+
+        self.button(
+            painter,
+            250,
+            300,
+            "↑",
+            11,
+            15
+        )
+
+
+        self.button(
+            painter,
+            250,
+            340,
+            "↓",
+            12,
+            15
+        )
+
+
+        self.button(
+            painter,
+            210,
+            320,
+            "←",
+            13,
+            15
+        )
+
+
+        self.button(
+            painter,
+            290,
+            320,
+            "→",
+            14,
+            15
         )

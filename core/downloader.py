@@ -5,22 +5,34 @@ import urllib.request
 class Downloader:
 
 
+
     def baixar(
+
         self,
+
         url,
+
         destino,
+
         callback=None
+
     ):
 
 
+
         def progresso(
+
             bloco,
+
             tamanho_bloco,
+
             tamanho_total
+
         ):
 
 
-            if callback:
+
+            if callback and tamanho_total > 0:
 
 
                 porcentagem = int(
@@ -33,9 +45,17 @@ class Downloader:
                 )
 
 
+                if porcentagem > 100:
+
+                    porcentagem = 100
+
+
+
                 callback(
                     porcentagem
                 )
+
+
 
 
 

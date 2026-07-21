@@ -776,10 +776,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_wmi.pyd',
    'EXTENSION'),
-  ('assets\\icons\\canaris.ico',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\assets\\icons\\canaris.ico',
-   'DATA'),
   ('base_library.zip',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\build\\CANARIS CM\\base_library.zip',

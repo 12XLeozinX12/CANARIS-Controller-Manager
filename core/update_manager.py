@@ -1,5 +1,6 @@
 import json
 import urllib.request
+import os
 
 
 
@@ -8,22 +9,56 @@ class UpdateManager:
 
     def __init__(self):
 
-        self.current_version = "1.0.0"
-
-
-        # futuramente será seu servidor
         self.url = (
-            "update.json"
+            "https://raw.githubusercontent.com/"
+            "12XLeozinX12/"
+            "CANARIS-Controller-Manager/"
+            "main/update.json"
         )
 
-    def verificar_atualizacao(self):
 
+
+
+    def versao_atual(self):
 
         try:
 
+            with open(
+                "version.txt",
+                "r",
+                encoding="utf-8"
+            ) as arquivo:
+
+                return arquivo.read().strip()
+
+
+        except:
+
+            return "UNKNOWN"
+
+
+
+
+
+    def comparar(
+        self,
+        atual,
+        nova
+    ):
+
+        return atual != nova
+
+
+
+
+
+
+    def verificar_atualizacao(self):
+
+        try:
 
             resposta = urllib.request.urlopen(
-                self.update_url,
+                self.url,
                 timeout=5
             )
 
@@ -33,42 +68,54 @@ class UpdateManager:
             )
 
 
-            nova_versao = dados["version"]
+
+            atual = self.versao_atual()
+
+            nova = dados["version"]
 
 
 
-            if nova_versao != self.current_version:
+            if self.comparar(
+                atual,
+                nova
+            ):
 
 
                 return {
 
                     "update": True,
 
-                    "version": nova_versao,
+                    "version": nova,
 
-                    "download": dados["download"]
+                    "download":
+                    dados["download"],
+
+                    "changelog":
+                    dados.get(
+                        "changelog",
+                        []
+                    )
 
                 }
 
 
 
-            return {
 
-                "update": False
+        except Exception as erro:
 
-            }
-
-
-
-        except Exception:
+            print(
+                "Erro update:",
+                erro
+            )
 
 
-            return {
 
-                "update": False
 
-            }
+        return {
 
+            "update": False
+
+        }
 
 
 

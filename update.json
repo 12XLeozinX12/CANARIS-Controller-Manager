@@ -1,11 +1,9 @@
 {
-    "version": "BETA 0.1.2",
-    "download": "",
+    "version": "BETA 0.1.3",
+    "download": "https://github.com/12XLeozinX12/CANARIS-Controller-Manager/releases/download/BETA-0.1.3/CANARIS_CM.exe",
     "changelog": [
-        "Controller Lab 2.0",
-        "Suporte a gatilhos L2/R2 com pressão",
-        "Sistema de vibração",
-        "Correções no mapeamento de controles",
-        "Melhorias gerais da Beta"
+        "Sistema de atualização automática",
+        "Melhorias no Controller Lab",
+        "Correções no mapeamento de controles"
     ]
 }

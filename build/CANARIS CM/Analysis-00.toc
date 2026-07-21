@@ -22,10 +22,7 @@
  {},
  0,
  [],
- [('assets\\icons\\canaris.ico',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\assets\\icons\\canaris.ico',
-   'DATA')],
+ [],
  '3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit '
  '(AMD64)]',
  [('pyi_rth_inspect',
@@ -480,13 +477,17 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\__init__.py',
    'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('_colorize',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_colorize.py',
+   'PYMODULE'),
   ('stringprep',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\stringprep.py',
-   'PYMODULE'),
-  ('_py_abc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
    'PYMODULE'),
   ('subprocess',
    'C:\\Program '
@@ -496,17 +497,13 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\signal.py',
    'PYMODULE'),
-  ('tracemalloc',
+  ('_py_abc',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
    'PYMODULE'),
-  ('_colorize',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_colorize.py',
-   'PYMODULE'),
-  ('core.update_manager',
+  ('core.downloader',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\core\\update_manager.py',
+   'py\\CANARIS Controller Manager\\core\\downloader.py',
    'PYMODULE'),
   ('core',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -560,23 +557,19 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\http\\client.py',
    'PYMODULE'),
+  ('core.update_manager',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\core\\update_manager.py',
+   'PYMODULE'),
   ('core.logger',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\core\\logger.py',
    'PYMODULE'),
-  ('gui.main_window',
+  ('gui.update_window',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\gui\\main_window.py',
+   'py\\CANARIS Controller Manager\\gui\\update_window.py',
    'PYMODULE'),
   ('gui', '-', 'PYMODULE'),
-  ('gui.widgets.sidebar_button',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\gui\\widgets\\sidebar_button.py',
-   'PYMODULE'),
-  ('gui.widgets',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\gui\\widgets\\__init__.py',
-   'PYMODULE'),
   ('shiboken6',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
@@ -596,6 +589,18 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\support\\__init__.py',
+   'PYMODULE'),
+  ('gui.main_window',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\gui\\main_window.py',
+   'PYMODULE'),
+  ('gui.widgets.sidebar_button',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\gui\\widgets\\sidebar_button.py',
+   'PYMODULE'),
+  ('gui.widgets',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller Manager\\gui\\widgets\\__init__.py',
    'PYMODULE'),
   ('gui.styles',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -621,21 +626,17 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\gui\\pages\\__init__.py',
    'PYMODULE'),
-  ('core.button_mapper',
+  ('gui.widgets.trigger_bar',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\core\\button_mapper.py',
+   'py\\CANARIS Controller Manager\\gui\\widgets\\trigger_bar.py',
    'PYMODULE'),
-  ('core.controller_profile',
+  ('gui.widgets.axis_bar',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\core\\controller_profile.py',
+   'py\\CANARIS Controller Manager\\gui\\widgets\\axis_bar.py',
    'PYMODULE'),
   ('gui.widgets.controller_visual',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\gui\\widgets\\controller_visual.py',
-   'PYMODULE'),
-  ('gui.widgets.input_button',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\gui\\widgets\\input_button.py',
    'PYMODULE'),
   ('core.controller_manager',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -779,125 +780,105 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\opengl32sw.dll',
    'BINARY'),
-  ('PySide6\\plugins\\tls\\qopensslbackend.dll',
+  ('PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qopensslbackend.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'BINARY'),
   ('PySide6\\plugins\\tls\\qcertonlybackend.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qcertonlybackend.dll',
    'BINARY'),
-  ('PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
-   'BINARY'),
   ('PySide6\\plugins\\tls\\qschannelbackend.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qschannelbackend.dll',
    'BINARY'),
-  ('libjpeg-9.dll',
+  ('PySide6\\plugins\\tls\\qopensslbackend.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libjpeg-9.dll',
-   'BINARY'),
-  ('libopusfile-0.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libopusfile-0.dll',
-   'BINARY'),
-  ('libopus-0.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libopus-0.dll',
-   'BINARY'),
-  ('zlib1.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\zlib1.dll',
-   'BINARY'),
-  ('SDL2_ttf.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_ttf.dll',
-   'BINARY'),
-  ('libpng16-16.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libpng16-16.dll',
-   'BINARY'),
-  ('libtiff-5.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libtiff-5.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qopensslbackend.dll',
    'BINARY'),
   ('portmidi.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\pygame\\portmidi.dll',
    'BINARY'),
-  ('SDL2_mixer.dll',
+  ('libopusfile-0.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_mixer.dll',
-   'BINARY'),
-  ('libmodplug-1.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libmodplug-1.dll',
-   'BINARY'),
-  ('libogg-0.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libogg-0.dll',
-   'BINARY'),
-  ('SDL2_image.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_image.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libopusfile-0.dll',
    'BINARY'),
   ('SDL2.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2.dll',
    'BINARY'),
-  ('libwebp-7.dll',
+  ('SDL2_mixer.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libwebp-7.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_mixer.dll',
+   'BINARY'),
+  ('SDL2_ttf.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_ttf.dll',
+   'BINARY'),
+  ('libmodplug-1.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libmodplug-1.dll',
+   'BINARY'),
+  ('SDL2_image.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_image.dll',
+   'BINARY'),
+  ('libpng16-16.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libpng16-16.dll',
    'BINARY'),
   ('freetype.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\pygame\\freetype.dll',
    'BINARY'),
-  ('PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
+  ('libjpeg-9.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libjpeg-9.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qwebp.dll',
+  ('zlib1.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwebp.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\zlib1.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qicns.dll',
+  ('libogg-0.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qicns.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libogg-0.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qgif.dll',
+  ('libopus-0.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qgif.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libopus-0.dll',
    'BINARY'),
-  ('PySide6\\plugins\\iconengines\\qsvgicon.dll',
+  ('libwebp-7.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libwebp-7.dll',
+   'BINARY'),
+  ('libtiff-5.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libtiff-5.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforms\\qminimal.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qminimal.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qoffscreen.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -909,60 +890,80 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwbmp.dll',
    'BINARY'),
-  ('PySide6\\plugins\\platforms\\qminimal.dll',
+  ('PySide6\\plugins\\imageformats\\qjpeg.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qminimal.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\imageformats\\qwebp.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwebp.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qwindows.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qwindows.dll',
    'BINARY'),
-  ('PySide6\\plugins\\platforms\\qdirect2d.dll',
+  ('PySide6\\plugins\\imageformats\\qicns.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qdirect2d.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qicns.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qpdf.dll',
+  ('PySide6\\plugins\\imageformats\\qgif.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qpdf.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qgif.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qsvg.dll',
+  ('PySide6\\plugins\\imageformats\\qtga.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qsvg.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qico.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qico.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtga.dll',
    'BINARY'),
   ('PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qjpeg.dll',
+  ('PySide6\\plugins\\imageformats\\qpdf.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qjpeg.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qpdf.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\imageformats\\qico.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qico.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qtiff.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtiff.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qtga.dll',
+  ('PySide6\\plugins\\imageformats\\qsvg.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtga.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qsvg.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforms\\qdirect2d.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qdirect2d.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
    'BINARY'),
   ('_lzma.pyd',
    'C:\\Program '
@@ -1158,15 +1159,15 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\pygame\\base.cp313-win_amd64.pyd',
    'EXTENSION'),
-  ('PySide6\\QtWidgets.pyd',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\QtWidgets.pyd',
-   'EXTENSION'),
   ('PySide6\\QtGui.pyd',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\QtGui.pyd',
+   'EXTENSION'),
+  ('PySide6\\QtWidgets.pyd',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\QtWidgets.pyd',
    'EXTENSION'),
   ('VCRUNTIME140.dll',
    'C:\\Program '
@@ -1177,6 +1178,11 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\shiboken6\\MSVCP140.dll',
    'BINARY'),
+  ('PySide6\\Qt6Network.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Network.dll',
+   'BINARY'),
   ('VCRUNTIME140_1.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\VCRUNTIME140_1.dll',
@@ -1185,11 +1191,6 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Core.dll',
-   'BINARY'),
-  ('PySide6\\Qt6Network.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Network.dll',
    'BINARY'),
   ('pygame\\libopus-0.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -1216,11 +1217,6 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\pygame\\libjpeg-9.dll',
    'BINARY'),
-  ('PySide6\\Qt6Widgets.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Widgets.dll',
-   'BINARY'),
   ('PySide6\\Qt6Gui.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
@@ -1241,6 +1237,11 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6VirtualKeyboard.dll',
    'BINARY'),
+  ('PySide6\\Qt6Widgets.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Widgets.dll',
+   'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-3.dll',
@@ -1249,30 +1250,30 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-3.dll',
    'BINARY'),
+  ('PySide6\\VCRUNTIME140.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140.dll',
+   'BINARY'),
   ('PySide6\\VCRUNTIME140_1.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140_1.dll',
-   'BINARY'),
-  ('PySide6\\MSVCP140.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140.dll',
    'BINARY'),
   ('shiboken6\\shiboken6.abi3.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\shiboken6\\shiboken6.abi3.dll',
    'BINARY'),
+  ('PySide6\\MSVCP140.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140.dll',
+   'BINARY'),
   ('PySide6\\pyside6.abi3.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\pyside6.abi3.dll',
-   'BINARY'),
-  ('PySide6\\VCRUNTIME140.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140.dll',
    'BINARY'),
   ('python3.dll',
    'C:\\Program '
@@ -1292,15 +1293,15 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\libffi-8.dll',
    'BINARY'),
-  ('pygame\\libpng16-16.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\pygame\\libpng16-16.dll',
-   'BINARY'),
   ('pygame\\SDL2_image.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\pygame\\SDL2_image.dll',
+   'BINARY'),
+  ('pygame\\libpng16-16.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\pygame\\libpng16-16.dll',
    'BINARY'),
   ('pygame\\SDL2_mixer.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -1327,30 +1328,30 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140_1.dll',
    'BINARY'),
-  ('PySide6\\Qt6Quick.dll',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Quick.dll',
-   'BINARY'),
   ('PySide6\\Qt6Qml.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Qml.dll',
    'BINARY'),
-  ('PySide6\\Qt6OpenGL.dll',
+  ('PySide6\\Qt6Quick.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6OpenGL.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6Quick.dll',
+   'BINARY'),
+  ('PySide6\\Qt6QmlModels.dll',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlModels.dll',
    'BINARY'),
   ('PySide6\\Qt6QmlMeta.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlMeta.dll',
    'BINARY'),
-  ('PySide6\\Qt6QmlModels.dll',
+  ('PySide6\\Qt6OpenGL.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlModels.dll',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\Qt6OpenGL.dll',
    'BINARY'),
   ('PySide6\\Qt6QmlWorkerScript.dll',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -1359,49 +1360,290 @@
    'BINARY')],
  [],
  [],
- [('assets\\icons\\canaris.ico',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller Manager\\assets\\icons\\canaris.ico',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_pl.qm',
+ [('PySide6\\translations\\qt_en.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pl.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_en.qm',
    'DATA'),
-  ('PySide6\\translations\\qtbase_cs.qm',
+  ('PySide6\\translations\\qt_ru.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_cs.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ru.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_zh_TW.qm',
+  ('PySide6\\translations\\qtbase_hu.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_TW.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_hr.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sv.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_gl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_nn.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_en.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ar.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_pt_BR.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_nn.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ka.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_bg.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_nl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_hr.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_es.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_it.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_da.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_de.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sk.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pt_PT.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_PT.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_sl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ja.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_uk.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_bg.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_it.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_da.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ru.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ru.qm',
    'DATA'),
   ('PySide6\\translations\\qt_tr.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_tr.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_fr.qm',
+  ('PySide6\\translations\\qtbase_he.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fr.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_he.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_zh_CN.qm',
+  ('PySide6\\translations\\qtbase_tr.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_CN.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ka.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pt_BR.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_hu.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_uk.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_es.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ko.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ko.qm',
    'DATA'),
   ('PySide6\\translations\\qt_ja.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ja.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_nn.qm',
+  ('PySide6\\translations\\qtbase_pl.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nn.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ar.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ru.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_nl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ka.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fr.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ca.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_zh_TW.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_TW.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_it.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_cs.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_fr.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_cs.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_de.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_zh_CN.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ko.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_bg.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_gl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_zh_TW.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_TW.qm',
    'DATA'),
   ('PySide6\\translations\\qtbase_sv.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -1413,435 +1655,190 @@
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lg.qm',
    'DATA'),
-  ('PySide6\\translations\\qtbase_ca.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ca.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_pt_PT.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_PT.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_gl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_fi.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fi.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_nn.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nn.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_sk.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_tr.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_tr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_cs.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_cs.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_sv.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ru.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ru.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_sk.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_hu.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hu.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_hu.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hu.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_zh_TW.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_TW.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_lv.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_hu.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hu.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_fr.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_fr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_zh_CN.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_CN.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ja.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ja.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_pt_BR.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pt_BR.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ru.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ru.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_de.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_de.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_uk.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_uk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_en.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_en.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ca.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ca.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_es.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_es.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_tr.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_tr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_da.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_da.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_he.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_he.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_da.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_da.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ko.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ko.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ka.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ka.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_zh_CN.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_CN.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ko.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ko.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_pl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_hr.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hr.qm',
-   'DATA'),
   ('PySide6\\translations\\qt_da.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_da.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_lt.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lt.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_nl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_hr.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_nl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ar.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ar.qm',
    'DATA'),
   ('PySide6\\translations\\qt_help_en.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_en.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_cs.qm',
+  ('PySide6\\translations\\qt_fi.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_cs.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_en.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_en.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_sl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_pl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_nl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_pt_BR.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_BR.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ca.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ca.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_fa.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fa.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_bg.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_bg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_de.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_de.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_fa.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fa.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_bg.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_bg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_uk.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_uk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_zh_TW.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_TW.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ar.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ar.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_it.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_it.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_fr.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_it.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_it.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_he.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_he.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_es.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_es.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_nn.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nn.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_lg.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ru.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ru.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_sl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_uk.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_uk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_lv.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ka.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ka.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fi.qm',
    'DATA'),
   ('PySide6\\translations\\qtbase_fi.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fi.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_de.qm',
+  ('PySide6\\translations\\qt_fa.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_de.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fa.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_sk.qm',
+  ('PySide6\\translations\\qt_help_pl.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sk.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pl.qm',
    'DATA'),
-  ('PySide6\\translations\\qtbase_ja.qm',
+  ('PySide6\\translations\\qt_ca.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ja.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ca.qm',
    'DATA'),
-  ('PySide6\\translations\\qtbase_ko.qm',
+  ('PySide6\\translations\\qt_nl.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ko.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nl.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_pt_BR.qm',
+  ('PySide6\\translations\\qt_lg.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pt_BR.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lg.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_ar.qm',
+  ('PySide6\\translations\\qt_help_tr.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ar.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_tr.qm',
    'DATA'),
-  ('PySide6\\translations\\qtbase_bg.qm',
+  ('PySide6\\translations\\qtbase_de.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_bg.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_de.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_hr.qm',
+  ('PySide6\\translations\\qt_zh_CN.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hr.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_CN.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_ka.qm',
+  ('PySide6\\translations\\qt_ko.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ka.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_gl.qm',
-   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
-   'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_gl.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ko.qm',
    'DATA'),
   ('PySide6\\translations\\qt_gd.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gd.qm',
    'DATA'),
+  ('PySide6\\translations\\qtbase_ja.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ar.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_zh_CN.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_hu.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_lv.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lt.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lt.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lv.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lv.qm',
+   'DATA'),
   ('PySide6\\translations\\qt_help_sv.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sv.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_it.qm',
+  ('PySide6\\translations\\qtbase_fa.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_it.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fa.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sl.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_he.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_he.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_uk.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_sk.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sk.qm',
    'DATA'),
   ('PySide6\\translations\\qtbase_gd.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
    'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_gd.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_es.qm',
+  ('PySide6\\translations\\qt_help_zh_TW.qm',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller '
-   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_es.qm',
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_TW.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_nn.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_sk.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_cs.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_hr.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_pt_BR.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ca.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_es.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fr.qm',
+   'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
+   'py\\CANARIS Controller '
+   'Manager\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fr.qm',
    'DATA'),
   ('pygame\\freesansbold.ttf',
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
@@ -1857,13 +1854,97 @@
    'C:\\Users\\Computador\\OneDrive\\Documentos\\Curso Phyton\\projetos '
    'py\\CANARIS Controller Manager\\build\\CANARIS CM\\base_library.zip',
    'DATA')],
- [('copyreg',
+ [('collections',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\copyreg.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\collections\\__init__.py',
+   'PYMODULE'),
+  ('types',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\types.py',
+   'PYMODULE'),
+  ('io',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\io.py',
+   'PYMODULE'),
+  ('_collections_abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_collections_abc.py',
+   'PYMODULE'),
+  ('weakref',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\weakref.py',
+   'PYMODULE'),
+  ('sre_compile',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\sre_compile.py',
+   'PYMODULE'),
+  ('_weakrefset',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_weakrefset.py',
+   'PYMODULE'),
+  ('genericpath',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\genericpath.py',
+   'PYMODULE'),
+  ('functools',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\functools.py',
+   'PYMODULE'),
+  ('re._parser',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_parser.py',
+   'PYMODULE'),
+  ('re._constants',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_constants.py',
+   'PYMODULE'),
+  ('re._compiler',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_compiler.py',
+   'PYMODULE'),
+  ('re._casefix',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_casefix.py',
+   'PYMODULE'),
+  ('re',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\__init__.py',
+   'PYMODULE'),
+  ('codecs',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\codecs.py',
+   'PYMODULE'),
+  ('keyword',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\keyword.py',
+   'PYMODULE'),
+  ('ntpath',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\ntpath.py',
    'PYMODULE'),
   ('heapq',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\heapq.py',
+   'PYMODULE'),
+  ('enum',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\enum.py',
+   'PYMODULE'),
+  ('locale',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\locale.py',
+   'PYMODULE'),
+  ('warnings',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\warnings.py',
+   'PYMODULE'),
+  ('linecache',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\linecache.py',
+   'PYMODULE'),
+  ('traceback',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\traceback.py',
    'PYMODULE'),
   ('encodings.zlib_codec',
    'C:\\Program '
@@ -2353,123 +2434,39 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\__init__.py',
    'PYMODULE'),
-  ('weakref',
+  ('sre_constants',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\weakref.py',
-   'PYMODULE'),
-  ('_collections_abc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_collections_abc.py',
-   'PYMODULE'),
-  ('codecs',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\codecs.py',
-   'PYMODULE'),
-  ('abc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\abc.py',
-   'PYMODULE'),
-  ('sre_parse',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\sre_parse.py',
-   'PYMODULE'),
-  ('functools',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\functools.py',
-   'PYMODULE'),
-  ('re._parser',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_parser.py',
-   'PYMODULE'),
-  ('re._constants',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_constants.py',
-   'PYMODULE'),
-  ('re._compiler',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_compiler.py',
-   'PYMODULE'),
-  ('re._casefix',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\_casefix.py',
-   'PYMODULE'),
-  ('re',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\re\\__init__.py',
-   'PYMODULE'),
-  ('io',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\io.py',
-   'PYMODULE'),
-  ('sre_compile',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\sre_compile.py',
-   'PYMODULE'),
-  ('os',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\os.py',
-   'PYMODULE'),
-  ('locale',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\locale.py',
-   'PYMODULE'),
-  ('ntpath',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\ntpath.py',
-   'PYMODULE'),
-  ('warnings',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\warnings.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\sre_constants.py',
    'PYMODULE'),
   ('stat',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\stat.py',
    'PYMODULE'),
-  ('linecache',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\linecache.py',
-   'PYMODULE'),
-  ('sre_constants',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\sre_constants.py',
-   'PYMODULE'),
-  ('types',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\types.py',
-   'PYMODULE'),
-  ('genericpath',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\genericpath.py',
-   'PYMODULE'),
-  ('_weakrefset',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\_weakrefset.py',
-   'PYMODULE'),
   ('posixpath',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\posixpath.py',
+   'PYMODULE'),
+  ('copyreg',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\copyreg.py',
    'PYMODULE'),
   ('reprlib',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\reprlib.py',
    'PYMODULE'),
-  ('traceback',
+  ('sre_parse',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\traceback.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\sre_parse.py',
    'PYMODULE'),
   ('operator',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\operator.py',
    'PYMODULE'),
-  ('collections',
+  ('os',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\collections\\__init__.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\os.py',
    'PYMODULE'),
-  ('keyword',
+  ('abc',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\keyword.py',
-   'PYMODULE'),
-  ('enum',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\enum.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\abc.py',
    'PYMODULE')])

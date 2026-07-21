@@ -1,20 +1,59 @@
 import pygame
 
+from core.config_manager import config
 
 
 class ControllerManager:
 
-    def detectar_controles(self):
 
+    def __init__(self):
+
+        pygame.init()
+        pygame.joystick.init()
+
+        self.controller = None
+
+        self.atualizar()
+
+
+
+    # ==========================
+    # CONECTAR CONTROLE
+    # ==========================
+
+    def atualizar(self):
+
+        pygame.event.pump()
+
+        if pygame.joystick.get_count() > 0:
+
+            if self.controller is None:
+
+                self.controller = pygame.joystick.Joystick(0)
+                self.controller.init()
+
+        else:
+
+            self.controller = None
+
+
+
+    # ==========================
+    # LISTAR CONTROLES
+    # ==========================
+
+    def detectar_controles(self):
 
         self.atualizar()
 
 
         if not self.controller:
 
-
             return []
 
+
+
+        guid = self.controller.get_guid()
 
 
         return [
@@ -24,75 +63,30 @@ class ControllerManager:
                 "nome":
                 self.controller.get_name(),
 
-
                 "tipo":
                 self.identificar_tipo(),
-
 
                 "botoes":
                 self.controller.get_numbuttons(),
 
-
                 "eixos":
                 self.controller.get_numaxes(),
 
-
                 "id":
-                self.controller.get_guid()
+                guid,
+
+                "guid":
+                guid
 
             }
 
         ]
 
 
-    def __init__(self):
 
-
-        pygame.init()
-
-        pygame.joystick.init()
-
-
-        self.controller = None
-
-
-        self.atualizar()
-
-
-
-
-
-    def atualizar(self):
-
-
-        pygame.event.pump()
-
-
-        quantidade = pygame.joystick.get_count()
-
-
-
-        if quantidade > 0:
-
-
-            if self.controller is None:
-
-
-                self.controller = pygame.joystick.Joystick(0)
-
-                self.controller.init()
-
-
-
-        else:
-
-
-            self.controller = None
-
-
-
-
-
+    # ==========================
+    # ESTADO COMPLETO
+    # ==========================
 
     def get_state(self):
 
@@ -102,46 +96,47 @@ class ControllerManager:
 
         estado = {
 
+            "info":{
 
-            "info": {
+                "connected":False,
+                "nome":"",
+                "tipo":"",
+                "guid":"",
+                "botoes":0,
+                "eixos":0
+
+            },
+
+            "buttons":{},
 
 
-                "connected": False,
+            "axes":[],
 
-                "nome": "",
 
-                "tipo": "",
+            "triggers":{
 
-                "guid": "",
-
-                "botoes": 0,
-
-                "eixos": 0
+                "L2":0,
+                "R2":0
 
             },
 
 
-            "buttons": [],
+            "dpad":{
 
+                "up":False,
+                "down":False,
+                "left":False,
+                "right":False
 
-            "axes": [],
-
-
-            "dpad": {}
+            }
 
         }
 
 
 
-
-
         if not self.controller:
 
-
             return estado
-
-
-
 
 
 
@@ -149,146 +144,155 @@ class ControllerManager:
 
 
 
-        nome = self.controller.get_name()
-
-
-        guid = self.controller.get_guid()
-
-
-
-        tipo = self.identificar_tipo()
-
-
-
-
-
-
-        # =====================
+        # ======================
         # BOTÕES
-        # =====================
+        # ======================
 
 
-        botoes = []
+        botoes = {}
 
 
+        for i in range(
+            self.controller.get_numbuttons()
+        ):
 
-        try:
-
-
-            quantidade = (
-                self.controller
-                .get_numbuttons()
+            botoes[i] = bool(
+                self.controller.get_button(i)
             )
 
 
 
-            for i in range(quantidade):
 
 
-                if self.controller.get_button(i):
-
-
-                    botoes.append(i)
-
-
-
-        except pygame.error:
-
-
-            pass
-
-
-
-
-
-
-
-        # =====================
+        # ======================
         # EIXOS
-        # =====================
+        # ======================
 
 
         eixos = []
 
 
+        for i in range(
+            self.controller.get_numaxes()
+        ):
 
-        try:
+
+            valor = self.controller.get_axis(i)
 
 
-            quantidade = (
-                self.controller
-                .get_numaxes()
+            if abs(valor) < 0.05:
+
+                valor = 0
+
+
+            eixos.append(
+                round(valor,3)
             )
 
 
 
-            for i in range(quantidade):
 
 
-                valor = (
-                    self.controller
-                    .get_axis(i)
-                )
+        # ======================
+        # TRIGGERS
+        # ======================
 
 
+        triggers = {
 
-                if abs(valor) < 0.05:
+            "L2":0,
+            "R2":0
 
-                    valor = 0
-
-
-
-                eixos.append(
-                    round(
-                        valor,
-                        2
-                    )
-                )
+        }
 
 
 
-        except pygame.error:
+        if len(eixos) >= 6:
 
 
-            pass
+            triggers["L2"] = self.converter_trigger(
+                eixos[4]
+            )
 
 
+            triggers["R2"] = self.converter_trigger(
+                eixos[5]
+            )
+
+
+
+
+
+        # ======================
+        # DPAD
+        # ======================
+
+
+        dpad = {
+
+            "up":False,
+            "down":False,
+            "left":False,
+            "right":False
+
+        }
+
+
+
+        # DualShock usa botões
+
+        if botoes.get(11):
+
+            dpad["up"] = True
+
+
+        if botoes.get(12):
+
+            dpad["down"] = True
+
+
+        if botoes.get(13):
+
+            dpad["left"] = True
+
+
+        if botoes.get(14):
+
+            dpad["right"] = True
 
 
 
 
         estado["info"] = {
 
+            "connected":True,
 
-            "connected": True,
+            "nome":
+            self.controller.get_name(),
 
+            "tipo":
+            self.identificar_tipo(),
 
-            "nome": nome,
+            "guid":
+            self.controller.get_guid(),
 
+            "botoes":
+            self.controller.get_numbuttons(),
 
-            "tipo": tipo,
-
-
-            "guid": guid,
-
-
-            "botoes": self.controller.get_numbuttons(),
-
-
-            "eixos": self.controller.get_numaxes()
+            "eixos":
+            self.controller.get_numaxes()
 
         }
 
 
 
-
-
         estado["buttons"] = botoes
-
 
         estado["axes"] = eixos
 
+        estado["triggers"] = triggers
 
+        estado["dpad"] = dpad
 
 
 
@@ -297,101 +301,94 @@ class ControllerManager:
 
 
 
+    # ==========================
+    # TRIGGER
+    # ==========================
+
+    def converter_trigger(self,valor):
+
+        valor=float(valor)
 
 
+        if valor < -0.9:
+
+            return 0
+
+
+        if valor >= 0:
+
+            return round(valor*100,1)
+
+
+        return round(
+            ((valor+1)/2)*100,
+            1
+        )
+
+
+
+
+    # ==========================
+    # TIPO
+    # ==========================
 
     def identificar_tipo(self):
 
 
         if not self.controller:
 
-
             return "Unknown"
 
 
 
-
-        nome = (
-            self.controller
-            .get_name()
-            .lower()
-        )
+        nome = self.controller.get_name().lower()
 
 
-        guid = (
-            self.controller
-            .get_guid()
-            .lower()
-        )
+        guid = self.controller.get_guid().lower()
 
 
 
-        # PLAYSTATION
-
-
-        palavras = [
+        if any(x in nome for x in [
 
             "dualshock",
-
             "dualsense",
-
             "sony",
+            "playstation"
 
-            "playstation",
-
-            "wireless controller"
-
-        ]
-
-
-
-        for p in palavras:
-
-
-            if p in nome:
-
-
-                return "PlayStation"
-
-
-
-
-        if "054c" in guid:
-
+        ]):
 
             return "PlayStation"
 
 
 
+        if "054c" in guid:
+
+            return "PlayStation"
 
 
-        # XBOX
 
-
-        if (
-
-            "xbox" in nome
-
-            or
-
-            "xinput" in guid
-
-        ):
-
+        if "xbox" in nome or "xinput" in guid:
 
             return "Xbox"
 
 
 
-
-
         return "Generic"
 
-    def vibrar(
-        self,
-        forca=0.7,
-        tempo=500
-    ):
+
+
+
+    # ==========================
+    # VIBRAÇÃO
+    # ==========================
+
+    def vibrar(self,forca=0.7,tempo=500):
+
+
+        if not config.vibracao_ativa():
+
+            return False
+
 
 
         if not self.controller:
@@ -402,12 +399,10 @@ class ControllerManager:
 
         try:
 
-
             if hasattr(
                 self.controller,
                 "rumble"
             ):
-
 
                 self.controller.rumble(
                     forca,
@@ -415,16 +410,12 @@ class ControllerManager:
                     tempo
                 )
 
-
                 return True
 
 
-
-        except Exception:
-
+        except:
 
             pass
-
 
 
         return False

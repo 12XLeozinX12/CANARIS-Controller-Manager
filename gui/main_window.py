@@ -12,18 +12,18 @@ from PySide6.QtWidgets import (
 
 from gui.pages.dashboard import Dashboard
 from gui.pages.controles import Controles
-from gui.pages.config import Config
+from gui.pages.settings import Settings
 from gui.pages.sobre import Sobre
 from gui.pages.profiles import Profiles
 from gui.pages.controller_lab import ControllerLab
 
 
-from core.language_manager import language
-from core.paths import resource_path
-
-
 from gui.styles import DARK_THEME
 from gui.widgets.sidebar_button import SidebarButton
+
+
+from core.language_manager import language
+from core.paths import resource_path
 
 
 
@@ -41,6 +41,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(
             "CANARIS ™ Controller Manager"
         )
+
 
 
         self.setMinimumSize(
@@ -61,7 +62,9 @@ class MainWindow(QMainWindow):
             QIcon(
 
                 resource_path(
+
                     "assets/icons/canaris.ico"
+
                 )
 
             )
@@ -76,7 +79,15 @@ class MainWindow(QMainWindow):
 
 
 
+
+
+        # =========================
+        # CENTRAL
+        # =========================
+
+
         central = QWidget()
+
 
         self.setCentralWidget(
             central
@@ -84,7 +95,9 @@ class MainWindow(QMainWindow):
 
 
 
-        layout_principal = QHBoxLayout()
+        layout_principal = QHBoxLayout(
+            central
+        )
 
 
         layout_principal.setContentsMargins(
@@ -100,16 +113,14 @@ class MainWindow(QMainWindow):
         )
 
 
-        central.setLayout(
-            layout_principal
-        )
 
 
 
 
-        # =====================
+
+        # =========================
         # SIDEBAR
-        # =====================
+        # =========================
 
 
         sidebar = QVBoxLayout()
@@ -121,33 +132,69 @@ class MainWindow(QMainWindow):
 
 
 
-        self.titulo = QLabel(
+
+
+        titulo = QLabel(
             "CANARIS ™"
         )
 
 
-        self.titulo.setStyleSheet(
+        titulo.setStyleSheet(
+
             """
+
             color:#8B5CF6;
             font-size:32px;
             font-weight:bold;
             padding:20px;
+
             """
+
         )
 
 
         sidebar.addWidget(
-            self.titulo
+            titulo
         )
 
 
 
-        self.btn_dashboard = SidebarButton("")
-        self.btn_controles = SidebarButton("")
-        self.btn_lab = SidebarButton("")
-        self.btn_perfis = SidebarButton("")
-        self.btn_config = SidebarButton("")
-        self.btn_sobre = SidebarButton("")
+
+
+
+
+        self.btn_dashboard = SidebarButton(
+            ""
+        )
+
+
+        self.btn_controles = SidebarButton(
+            ""
+        )
+
+
+        self.btn_lab = SidebarButton(
+            ""
+        )
+
+
+        self.btn_profiles = SidebarButton(
+            ""
+        )
+
+
+        self.btn_settings = SidebarButton(
+            ""
+        )
+
+
+        self.btn_sobre = SidebarButton(
+            ""
+        )
+
+
+
+
 
 
 
@@ -155,41 +202,58 @@ class MainWindow(QMainWindow):
             self.btn_dashboard
         )
 
+
         sidebar.addWidget(
             self.btn_controles
         )
+
 
         sidebar.addWidget(
             self.btn_lab
         )
 
-        sidebar.addWidget(
-            self.btn_perfis
-        )
 
         sidebar.addWidget(
-            self.btn_config
+            self.btn_profiles
         )
+
+
+        sidebar.addWidget(
+            self.btn_settings
+        )
+
 
         sidebar.addWidget(
             self.btn_sobre
         )
 
 
+
+
+
         sidebar.addStretch()
 
 
 
+
+
         versao = QLabel(
-            "CANARIS ™ CM v1.0"
+
+            "CANARIS ™ CM\nBETA 0.1.2"
+
         )
 
 
         versao.setStyleSheet(
+
             """
+
             color:#777;
+
             padding:15px;
+
             """
+
         )
 
 
@@ -199,7 +263,11 @@ class MainWindow(QMainWindow):
 
 
 
+
+
+
         menu = QWidget()
+
 
         menu.setLayout(
             sidebar
@@ -220,32 +288,52 @@ class MainWindow(QMainWindow):
 
 
 
-        # =====================
+
+
+
+
+        # =========================
         # PAGINAS
-        # =====================
+        # =========================
+
 
 
         self.telas = QStackedWidget()
 
 
+
         self.telas.setSizePolicy(
+
             QSizePolicy.Expanding,
+
             QSizePolicy.Expanding
+
         )
+
+
+
 
 
 
         self.dashboard = Dashboard()
 
+
         self.controles = Controles()
+
 
         self.controller_lab = ControllerLab()
 
-        self.perfis = Profiles()
 
-        self.config = Config()
+        self.profiles = Profiles()
+
+
+        self.settings = Settings()
+
 
         self.sobre = Sobre()
+
+
+
 
 
 
@@ -257,9 +345,9 @@ class MainWindow(QMainWindow):
 
             self.controller_lab,
 
-            self.perfis,
+            self.profiles,
 
-            self.config,
+            self.settings,
 
             self.sobre
 
@@ -267,11 +355,16 @@ class MainWindow(QMainWindow):
 
 
 
+
+
         for pagina in paginas:
+
 
             self.telas.addWidget(
                 pagina
             )
+
+
 
 
 
@@ -281,63 +374,114 @@ class MainWindow(QMainWindow):
 
 
 
-        # =====================
+
+
+
+
+
+
+        # =========================
         # NAVEGAÇÃO
-        # =====================
+        # =========================
 
 
         self.btn_dashboard.clicked.connect(
+
             lambda:
+
             self.telas.setCurrentWidget(
+
                 self.dashboard
+
             )
+
         )
+
 
 
         self.btn_controles.clicked.connect(
+
             lambda:
+
             self.telas.setCurrentWidget(
+
                 self.controles
+
             )
+
         )
+
 
 
         self.btn_lab.clicked.connect(
+
             lambda:
+
             self.telas.setCurrentWidget(
+
                 self.controller_lab
+
             )
+
         )
 
 
-        self.btn_perfis.clicked.connect(
+
+        self.btn_profiles.clicked.connect(
+
             lambda:
+
             self.telas.setCurrentWidget(
-                self.perfis
+
+                self.profiles
+
             )
+
         )
 
 
-        self.btn_config.clicked.connect(
+
+        self.btn_settings.clicked.connect(
+
             lambda:
+
             self.telas.setCurrentWidget(
-                self.config
+
+                self.settings
+
             )
+
         )
+
 
 
         self.btn_sobre.clicked.connect(
+
             lambda:
+
             self.telas.setCurrentWidget(
+
                 self.sobre
+
             )
+
         )
 
 
+
+
+
+
+
+
+        # idioma
 
         language.idioma_alterado.connect(
+
             self.atualizar_idioma
+
         )
+
 
 
         self.atualizar_idioma()
@@ -346,49 +490,77 @@ class MainWindow(QMainWindow):
 
 
 
+
+
+
+
+
     def atualizar_idioma(self):
 
 
+
         self.btn_dashboard.setText(
+
             "🏠 " +
+
             language.texto(
                 "dashboard"
             )
+
         )
+
 
 
         self.btn_controles.setText(
+
             "🎮 " +
+
             language.texto(
                 "controles"
             )
+
         )
+
 
 
         self.btn_lab.setText(
+
             "🧪 Controller Lab"
+
         )
 
 
-        self.btn_perfis.setText(
+
+        self.btn_profiles.setText(
+
             "👤 " +
+
             language.texto(
                 "perfis"
             )
+
         )
 
 
-        self.btn_config.setText(
+
+        self.btn_settings.setText(
+
             "⚙ " +
+
             language.texto(
                 "config"
             )
+
         )
 
 
+
         self.btn_sobre.setText(
+
             "ℹ " +
+
             language.texto(
                 "sobre"
             )
+
         )
