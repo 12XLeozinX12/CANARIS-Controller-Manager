@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ambiente virtual
+.venv/
+
+# PyInstaller
+build/
+dist/
+
+# IDE
+.idea/
+
+# Logs
+logs/
+
+# Banco local
+*.db
+
+# Arquivos temporários
+*.tmp
+
+# Configurações locais
+config.json
+profiles.json
