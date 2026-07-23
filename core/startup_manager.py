@@ -7,29 +7,46 @@ import winreg
 class StartupManager:
 
 
+
     def __init__(self):
+
 
         self.nome = "CANARIS CM"
 
 
 
-    def caminho_executavel(self):
+
+
+
+
+    def caminho_programa(self):
 
 
         if getattr(
+
             sys,
-            'frozen',
+
+            "frozen",
+
             False
+
         ):
+
 
             return sys.executable
 
 
+
         else:
 
+
             return os.path.abspath(
+
                 sys.argv[0]
+
             )
+
+
 
 
 
@@ -39,43 +56,59 @@ class StartupManager:
     def ativar(self):
 
 
-        caminho = self.caminho_executavel()
+        caminho = self.caminho_programa()
 
 
 
-        chave = winreg.OpenKey(
-
-            winreg.HKEY_CURRENT_USER,
-
-            r"Software\Microsoft\Windows\CurrentVersion\Run",
-
-            0,
-
-            winreg.KEY_SET_VALUE
-
-        )
+        try:
 
 
+            chave = winreg.OpenKey(
 
-        winreg.SetValueEx(
+                winreg.HKEY_CURRENT_USER,
 
-            chave,
+                r"Software\Microsoft\Windows\CurrentVersion\Run",
 
-            self.nome,
+                0,
 
-            0,
+                winreg.KEY_SET_VALUE
 
-            winreg.REG_SZ,
-
-            caminho
-
-        )
+            )
 
 
 
-        winreg.CloseKey(
-            chave
-        )
+            winreg.SetValueEx(
+
+                chave,
+
+                self.nome,
+
+                0,
+
+                winreg.REG_SZ,
+
+                caminho
+
+            )
+
+
+
+            winreg.CloseKey(
+
+                chave
+
+            )
+
+
+
+            return True
+
+
+
+        except Exception:
+
+
+            return False
 
 
 
@@ -102,6 +135,7 @@ class StartupManager:
             )
 
 
+
             winreg.DeleteValue(
 
                 chave,
@@ -111,15 +145,24 @@ class StartupManager:
             )
 
 
+
             winreg.CloseKey(
+
                 chave
+
             )
 
 
-        except:
+
+            return True
 
 
-            pass
+
+        except Exception:
+
+
+            return False
+
 
 
 
@@ -141,6 +184,7 @@ class StartupManager:
             )
 
 
+
             winreg.QueryValueEx(
 
                 chave,
@@ -150,8 +194,11 @@ class StartupManager:
             )
 
 
+
             winreg.CloseKey(
+
                 chave
+
             )
 
 
@@ -159,7 +206,7 @@ class StartupManager:
 
 
 
-        except:
+        except Exception:
 
 
             return False

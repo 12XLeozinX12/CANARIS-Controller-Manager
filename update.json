@@ -1,9 +1,18 @@
 {
-    "version": "BETA 0.1.3",
-    "download": "https://github.com/12XLeozinX12/CANARIS-Controller-Manager/releases/download/BETA-0.1.3/CANARIS_CM.exe",
+    "version": "v1.0 RELEASE",
+
+    "download": "https://github.com/12XLeozinX12/CANARIS-Controller-Manager/releases",
+
     "changelog": [
-        "Sistema de atualização automática",
-        "Melhorias no Controller Lab",
-        "Correções no mapeamento de controles"
+
+        "Nova interface do CANARIS ™ CM",
+
+        "Sistema de notificações melhorado",
+
+        "Melhor suporte para controles",
+
+        "Correções de estabilidade",
+
+        "Primeira versão Release"
     ]
 }

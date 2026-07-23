@@ -1,5 +1,7 @@
 {
-    "app_name": "CANARIS ™ CM",
-    "version": "BETA 0.1.2",
-    "build": "002"
+    "name": "CANARIS Controller Manager",
+    "version": "v1.0 RELEASE",
+    "channel": "Release",
+    "build": 100,
+    "developer": "CANARIS Team"
 }

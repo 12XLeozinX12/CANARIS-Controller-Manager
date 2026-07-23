@@ -1,222 +1,281 @@
-import json
-import os
+# CANARIS ™ Controller Manager
+# Sistema de perfis de controles
 
 
+class ControllerProfiles:
 
-class ControllerProfile:
 
+    @staticmethod
+    def xbox():
 
-    FILE = "data/controller_profiles.json"
+        return {
 
+            "tipo": "Xbox",
 
+            "buttons": {
 
-    def __init__(self):
+                "A": 0,
+                "B": 1,
+                "X": 2,
+                "Y": 3,
 
+                "LB": 4,
+                "RB": 5,
 
-        self.profiles = []
+                "BACK": 6,
+                "START": 7,
 
+                "LS": 8,
+                "RS": 9,
 
-        self.load()
+                "HOME": 10
+            },
 
 
+            "axes": {
 
+                "LX":0,
+                "LY":1,
 
+                "RX":2,
+                "RY":3,
 
-    def load(self):
+                "LT":4,
+                "RT":5
 
+            },
 
-        if not os.path.exists(self.FILE):
 
+            "dpad": {
 
-            self.save()
+                "axis": False
 
-            return
-
-
-
-        try:
-
-
-            with open(
-
-                self.FILE,
-
-                "r",
-
-                encoding="utf-8"
-
-            ) as file:
-
-
-                self.profiles = json.load(file)
-
-
-
-        except:
-
-
-            self.profiles = []
-
-            self.save()
-
-
-
-
-
-    def save(self):
-
-
-        os.makedirs(
-
-            "data",
-
-            exist_ok=True
-
-        )
-
-
-        with open(
-
-            self.FILE,
-
-            "w",
-
-            encoding="utf-8"
-
-        ) as file:
-
-
-            json.dump(
-
-                self.profiles,
-
-                file,
-
-                indent=4,
-
-                ensure_ascii=False
-
-            )
-
-
-
-
-
-
-    def create(
-
-        self,
-
-        controller
-
-    ):
-
-
-        profile = {
-
-
-            "id":
-            controller["id"],
-
-
-            "name":
-            controller["nome"],
-
-
-            "type":
-            controller["tipo"],
-
-
-            "buttons":{},
-
-            "sensitivity":100,
-
-            "vibration":True
-
+            }
 
         }
 
 
 
-        self.profiles.append(
 
-            profile
-
-        )
+    @staticmethod
+    def playstation():
 
 
-        self.save()
+        return {
 
 
-
-        return profile
-
+            "tipo":"PlayStation",
 
 
+            "buttons":{
 
 
-    def get_by_id(
-
-        self,
-
-        guid
-
-    ):
+                "X":0,
+                "CIRCLE":1,
+                "SQUARE":2,
+                "TRIANGLE":3,
 
 
-        for profile in self.profiles:
+                "L1":4,
+                "R1":5,
 
 
-            if profile["id"] == guid:
+                "SHARE":6,
+                "OPTIONS":7,
 
 
-                return profile
+                "L3":8,
+                "R3":9,
 
 
+                "PS":10
 
-        return None
+            },
 
 
 
+            "axes":{
 
 
-    def update_button(
-
-        self,
-
-        guid,
-
-        button,
-
-        action
-
-    ):
+                "LX":0,
+                "LY":1,
 
 
-        profile = self.get_by_id(
-
-            guid
-
-        )
+                "RX":2,
+                "RY":5,
 
 
-        if not profile:
+                "L2":3,
+                "R2":4
 
-
-            return False
+            },
 
 
 
-        profile["buttons"][
+            "dpad":{
 
-            str(button)
+                "axis":False
 
-        ] = action
+            }
 
-
-
-        self.save()
+        }
 
 
 
-        return True
+
+    @staticmethod
+    def nintendo():
+
+
+        return {
+
+
+            "tipo":"Nintendo",
+
+
+            "buttons":{
+
+
+                "B":0,
+                "A":1,
+                "Y":2,
+                "X":3,
+
+
+                "L":4,
+                "R":5,
+
+
+                "MINUS":6,
+                "PLUS":7,
+
+
+                "LS":8,
+                "RS":9,
+
+
+                "HOME":10
+
+            },
+
+
+
+            "axes":{
+
+
+                "LX":0,
+                "LY":1,
+
+                "RX":2,
+                "RY":3,
+
+
+                "ZL":4,
+                "ZR":5
+
+            },
+
+
+            "dpad":{
+
+                "axis":False
+
+            }
+
+        }
+
+
+
+
+    @staticmethod
+    def generic():
+
+
+        return {
+
+
+            "tipo":"Generic",
+
+
+            "buttons":{
+
+
+                "A":0,
+                "B":1,
+                "X":2,
+                "Y":3
+
+            },
+
+
+            "axes":{
+
+
+                "LX":0,
+                "LY":1,
+
+                "RX":2,
+                "RY":3
+
+            },
+
+
+            "dpad":{
+
+                "axis":False
+
+            }
+
+        }
+
+
+
+
+
+    @staticmethod
+    def detectar(nome,guid):
+
+
+        nome = nome.lower()
+        guid = guid.lower()
+
+
+
+        if any(x in nome for x in [
+
+            "xbox",
+            "xinput",
+            "microsoft"
+
+        ]):
+
+            return ControllerProfiles.xbox()
+
+
+
+        if any(x in nome for x in [
+
+            "dualshock",
+            "dualsense",
+            "playstation",
+            "sony"
+
+        ]):
+
+            return ControllerProfiles.playstation()
+
+
+
+        if any(x in nome for x in [
+
+            "nintendo",
+            "switch",
+            "joy"
+
+        ]):
+
+            return ControllerProfiles.nintendo()
+
+
+
+        return ControllerProfiles.generic()

@@ -1,12 +1,18 @@
 import sys
 
 
-from PySide6.QtWidgets import QApplication, QMessageBox
-from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import (
+    QApplication,
+    QMessageBox
+)
 
+from PySide6.QtGui import QIcon
+from PySide6.QtCore import QTimer
 
 
 from gui.main_window import MainWindow
+
+from gui.widgets.notification import notification
 
 
 from core.logger import CanarisLogger
@@ -26,11 +32,9 @@ from core.paths import resource_path
 def main():
 
 
-
     # =========================
     # LOGGER
     # =========================
-
 
     logger = CanarisLogger()
 
@@ -42,39 +46,56 @@ def main():
 
 
 
-
     # =========================
-    # APP QT
+    # QT APP
     # =========================
-
 
     app = QApplication(
         sys.argv
     )
 
 
+    notification.conectar_app(
+        app
+    )
+
+
+    app.notification = notification
+
 
 
 
 
     # =========================
-    # ÍCONE
+    # ICONE
     # =========================
 
+    try:
 
-    app.setWindowIcon(
 
-        QIcon(
+        app.setWindowIcon(
 
-            resource_path(
+            QIcon(
 
-                "assets/icons/canaris.ico"
+                resource_path(
+
+                    "assets/icons/canaris.ico"
+
+                )
 
             )
 
         )
 
-    )
+
+    except Exception as erro:
+
+
+        logger.error(
+
+            f"Erro carregando ícone: {erro}"
+
+        )
 
 
 
@@ -83,27 +104,34 @@ def main():
 
 
     # =========================
-    # CARREGAR TEMA
+    # TEMA
     # =========================
 
-
-    tema_atual = settings.get(
-
-        "tema"
-
-    )
+    try:
 
 
-
-    theme.aplicar(
-
-        app,
-
-        tema_atual
-
-    )
+        tema_atual = settings.get(
+            "tema"
+        )
 
 
+        theme.aplicar(
+
+            app,
+
+            tema_atual
+
+        )
+
+
+    except Exception as erro:
+
+
+        logger.error(
+
+            f"Erro carregando tema: {erro}"
+
+        )
 
 
 
@@ -112,9 +140,8 @@ def main():
 
 
     # =========================
-    # ATUALIZAÇÃO
+    # UPDATE
     # =========================
-
 
     try:
 
@@ -132,29 +159,13 @@ def main():
         ):
 
 
-
             QMessageBox.information(
 
                 None,
 
                 "CANARIS ™ CM",
 
-                f"""
-
-Nova versão disponível:
-
-{resultado['version']}
-
-
-Versão atual:
-
-BETA 0.1.2
-
-
-Atualize para continuar usando
-a versão mais recente.
-
-"""
+                "Nova atualização disponível!"
 
             )
 
@@ -165,11 +176,9 @@ a versão mais recente.
 
         logger.error(
 
-            f"Erro no sistema de atualização: {erro}"
+            f"Erro update: {erro}"
 
         )
-
-
 
 
 
@@ -181,11 +190,62 @@ a versão mais recente.
     # JANELA PRINCIPAL
     # =========================
 
+    try:
 
-    window = MainWindow()
+
+        logger.info(
+            "Criando janela principal..."
+        )
 
 
-    window.show()
+        window = MainWindow()
+
+
+        logger.info(
+            "Janela criada."
+        )
+
+
+        window.show()
+
+
+        logger.info(
+            "Janela exibida."
+        )
+
+
+
+    except Exception as erro:
+
+
+        import traceback
+
+
+        traceback.print_exc()
+
+
+
+        logger.error(
+
+            f"Erro abrindo janela principal: {erro}"
+
+        )
+
+
+
+        QMessageBox.critical(
+
+            None,
+
+            "CANARIS ™ CM",
+
+            f"Erro iniciando aplicativo:\n\n{erro}"
+
+        )
+
+
+        return
+
 
 
 
@@ -193,9 +253,33 @@ a versão mais recente.
 
 
     # =========================
-    # EXECUTAR
+    # NOTIFICAÇÃO
     # =========================
 
+    QTimer.singleShot(
+
+        800,
+
+        lambda:
+
+        notification.success(
+
+            "CANARIS ™ iniciado com sucesso!"
+
+        )
+
+    )
+
+
+
+
+
+
+
+
+    # =========================
+    # LOOP QT
+    # =========================
 
     sys.exit(
 
@@ -210,8 +294,6 @@ a versão mais recente.
 
 
 
-
 if __name__ == "__main__":
-
 
     main()

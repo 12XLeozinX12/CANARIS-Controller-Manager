@@ -16,37 +16,53 @@ class AppData:
             "settings.json"
         )
 
-
         self.create_folder()
+
+
+
 
 
     def get_folder(self):
 
+
         if sys.platform == "win32":
+
 
             base = os.getenv(
                 "APPDATA"
             )
 
+
         else:
+
 
             base = os.path.expanduser(
                 "~/.config"
             )
 
 
+
         return os.path.join(
+
             base,
+
             "CANARIS CM"
+
         )
+
+
+
+
 
 
 
     def create_folder(self):
 
+
         if not os.path.exists(
             self.folder
         ):
+
 
             os.makedirs(
                 self.folder
@@ -54,25 +70,35 @@ class AppData:
 
 
 
+
+
+
+
+
     def load_settings(self):
+
 
         if not os.path.exists(
             self.settings_file
         ):
 
-            return {
 
-                "language":"pt"
+            return {}
 
-            }
+
 
 
         try:
 
+
             with open(
+
                 self.settings_file,
+
                 "r",
+
                 encoding="utf-8"
+
             ) as arquivo:
 
 
@@ -81,36 +107,56 @@ class AppData:
                 )
 
 
+
         except:
 
 
-            return {
+            return {}
 
-                "language":"pt"
 
-            }
+
+
+
+
 
 
 
     def save_settings(
+
         self,
+
         data
+
     ):
 
 
         with open(
+
             self.settings_file,
+
             "w",
+
             encoding="utf-8"
+
         ) as arquivo:
 
 
+
             json.dump(
+
                 data,
+
                 arquivo,
+
                 indent=4,
+
                 ensure_ascii=False
+
             )
+
+
+
+
 
 
 

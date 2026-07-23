@@ -1,103 +1,133 @@
+import json
+import os
+
+
+
+
+
 class ControllerMapper:
+
 
 
     def __init__(self):
 
-        self.maps = {
+
+        self.pasta = "profiles/controllers"
 
 
-            # =================================
-            # PLAYSTATION
-            # =================================
-
-            "PlayStation": {
-
-
-                0: "✕ X",
-
-                1: "⭕ O",
-
-                2: "◻ Quadrado",
-
-                3: "🔺 Triângulo",
+        os.makedirs(
+            self.pasta,
+            exist_ok=True
+        )
 
 
-                4: "SHARE",
-
-                6: "OPTIONS",
 
 
-                7: "L3",
 
-                8: "R3",
-
-
-                9: "L1",
-
-                10: "L2",
+    # ======================================
+    # CAMINHO DO PERFIL
+    # ======================================
 
 
-                11: "D-PAD UP",
-
-                12: "D-PAD DOWN",
-
-                13: "D-PAD LEFT",
-
-                14: "D-PAD RIGHT",
+    def caminho(
+        self,
+        guid
+    ):
 
 
-                15: "TOUCH PAD CLICK"
+        nome = guid.replace(
+            "/",
+            "_"
+        )
+
+
+        return os.path.join(
+
+            self.pasta,
+
+            f"{nome}.json"
+
+        )
+
+
+
+
+
+
+    # ======================================
+    # PERFIL PADRÃO
+    # ======================================
+
+
+    def perfil_padrao(self):
+
+
+        return {
+
+
+            "buttons":{
+
+
+                "A":0,
+
+                "B":1,
+
+                "X":2,
+
+                "Y":3,
+
+
+                "LB":4,
+
+                "RB":5,
+
+
+                "SELECT":6,
+
+                "START":7,
+
+
+                "HOME":8
+
 
             },
 
 
 
-
-            # =================================
-            # XBOX
-            # =================================
-
-            "Xbox": {
+            "axes":{
 
 
-                0: "A",
+                "LEFT_X":0,
 
-                1: "B",
-
-                2: "X",
-
-                3: "Y",
+                "LEFT_Y":1,
 
 
-                4: "VIEW",
+                "RIGHT_X":2,
 
-                5: "MENU",
-
-
-                6: "LB",
-
-                7: "RB",
+                "RIGHT_Y":3,
 
 
-                8: "LS",
+                "L2":4,
 
-                9: "RS",
-
-
-                10: "LT",
-
-                11: "RT",
+                "R2":5
 
 
-                12: "D-PAD UP",
+            },
 
-                13: "D-PAD DOWN",
 
-                14: "D-PAD LEFT",
 
-                15: "D-PAD RIGHT"
+            "invert":{
 
-            }
+
+                "LEFT_Y":False,
+
+                "RIGHT_Y":False
+
+
+            },
+
+
+            "deadzone":0.08
 
 
 
@@ -107,24 +137,233 @@ class ControllerMapper:
 
 
 
-    def get_button_name(
+
+
+
+
+    # ======================================
+    # CARREGAR
+    # ======================================
+
+
+    def carregar(
         self,
-        tipo,
-        botao
+        guid
     ):
 
 
-        controle = self.maps.get(
-            tipo,
-            {}
+        arquivo = self.caminho(
+            guid
         )
 
 
 
-        return controle.get(
+        if not os.path.exists(
+            arquivo
+        ):
 
-            botao,
 
-            f"BOTÃO {botao}"
+            perfil = self.perfil_padrao()
+
+
+            self.salvar(
+                guid,
+                perfil
+            )
+
+
+            return perfil
+
+
+
+
+
+
+        try:
+
+
+            with open(
+                arquivo,
+                "r",
+                encoding="utf-8"
+            ) as f:
+
+
+                return json.load(f)
+
+
+
+        except:
+
+
+            return self.perfil_padrao()
+
+
+
+
+
+
+
+    # ======================================
+    # SALVAR
+    # ======================================
+
+
+    def salvar(
+        self,
+        guid,
+        dados
+    ):
+
+
+
+        arquivo = self.caminho(
+            guid
+        )
+
+
+
+        with open(
+
+            arquivo,
+
+            "w",
+
+            encoding="utf-8"
+
+        ) as f:
+
+
+            json.dump(
+
+                dados,
+
+                f,
+
+                indent=4,
+
+                ensure_ascii=False
+
+            )
+
+
+
+
+
+
+
+
+
+    # ======================================
+    # ALTERAR BOTÃO
+    # ======================================
+
+
+    def mapear_botao(
+
+        self,
+
+        guid,
+
+        nome,
+
+        codigo
+
+    ):
+
+
+
+        perfil = self.carregar(
+            guid
+        )
+
+
+        perfil["buttons"][nome]=codigo
+
+
+
+        self.salvar(
+
+            guid,
+
+            perfil
 
         )
+
+
+
+
+
+
+
+
+    # ======================================
+    # ALTERAR EIXO
+    # ======================================
+
+
+    def mapear_eixo(
+
+        self,
+
+        guid,
+
+        nome,
+
+        codigo
+
+    ):
+
+
+        perfil = self.carregar(
+            guid
+        )
+
+
+        perfil["axes"][nome]=codigo
+
+
+
+        self.salvar(
+
+            guid,
+
+            perfil
+
+        )
+
+
+
+
+
+
+
+
+    # ======================================
+    # RESETAR
+    # ======================================
+
+
+    def resetar(
+
+        self,
+
+        guid
+
+    ):
+
+
+
+        arquivo = self.caminho(
+            guid
+        )
+
+
+
+        if os.path.exists(
+            arquivo
+        ):
+
+            os.remove(
+                arquivo
+            )

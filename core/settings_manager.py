@@ -1,38 +1,61 @@
-import json
-import os
+from core.app_data import app_data
 
 
 
 class SettingsManager:
 
 
-    def __init__(self):
 
-        self.path = "settings.json"
+    def __init__(self):
 
 
         self.defaults = {
 
 
-            "tema": "Escuro",
+            "tema":
 
-            "idioma": "Português",
+            "Escuro",
 
-            "som": True,
 
-            "vibracao": True,
+            "idioma":
 
-            "iniciar_windows": False,
+            "Português",
 
-            "taxa_atualizacao": 50
 
+            "language":
+
+            "pt",
+
+
+            "som":
+
+            True,
+
+
+            "vibracao":
+
+            True,
+
+
+            "iniciar_windows":
+
+            False,
+
+
+            "taxa_atualizacao":
+
+            50
 
         }
 
 
+
         self.data = {}
 
+
         self.carregar()
+
+
 
 
 
@@ -41,36 +64,34 @@ class SettingsManager:
     def carregar(self):
 
 
-        if os.path.exists(self.path):
-
-            try:
-
-                with open(
-                    self.path,
-                    "r",
-                    encoding="utf-8"
-                ) as arquivo:
-
-                    self.data = json.load(
-                        arquivo
-                    )
+        self.data = app_data.load_settings()
 
 
-            except:
 
-                self.data = {}
+        alterado = False
 
 
 
         for chave, valor in self.defaults.items():
 
+
             if chave not in self.data:
+
 
                 self.data[chave] = valor
 
 
+                alterado = True
 
-        self.salvar()
+
+
+
+
+        if alterado:
+
+
+            self.salvar()
+
 
 
 
@@ -80,28 +101,12 @@ class SettingsManager:
     def salvar(self):
 
 
-        with open(
+        app_data.save_settings(
 
-            self.path,
+            self.data
 
-            "w",
+        )
 
-            encoding="utf-8"
-
-        ) as arquivo:
-
-
-            json.dump(
-
-                self.data,
-
-                arquivo,
-
-                indent=4,
-
-                ensure_ascii=False
-
-            )
 
 
 
@@ -109,8 +114,11 @@ class SettingsManager:
 
 
     def get(
+
         self,
+
         chave
+
     ):
 
 
@@ -118,9 +126,13 @@ class SettingsManager:
 
             chave,
 
-            self.defaults.get(chave)
+            self.defaults.get(
+                chave
+            )
 
         )
+
+
 
 
 
@@ -140,7 +152,25 @@ class SettingsManager:
 
         self.data[chave] = valor
 
+
         self.salvar()
+
+
+
+
+
+
+
+    def resetar(self):
+
+
+        self.data = self.defaults.copy()
+
+
+        self.salvar()
+
+
+
 
 
 

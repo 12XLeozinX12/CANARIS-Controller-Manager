@@ -2,15 +2,24 @@ from PySide6.QtWidgets import QPushButton
 from PySide6.QtCore import Qt
 
 
+
 class SidebarButton(QPushButton):
 
 
-    def __init__(self, texto):
+    def __init__(
+        self,
+        texto
+    ):
 
-        super().__init__(texto)
+
+        super().__init__(
+            texto
+        )
 
 
-        self.setCheckable(False)
+
+        self.ativo = False
+
 
 
         self.setCursor(
@@ -18,43 +27,133 @@ class SidebarButton(QPushButton):
         )
 
 
-        self.setStyleSheet(
-            """
-            QPushButton{
 
-                background:#171717;
-
-                color:white;
-
-                border:none;
-
-                text-align:left;
-
-                padding:14px;
-
-                border-radius:12px;
-
-                font-size:15px;
-
-            }
-
-
-
-            QPushButton:hover{
-
-                background:#252525;
-
-            }
-
-
-
-            QPushButton:pressed{
-
-                background:#8B5CF6;
-
-                color:white;
-
-            }
-
-            """
+        self.setMinimumHeight(
+            42
         )
+
+
+
+        self.atualizar_estilo()
+
+
+
+
+
+
+
+    def set_active(
+        self,
+        estado
+    ):
+
+
+        self.ativo = estado
+
+
+        self.atualizar_estilo()
+
+
+
+
+
+
+
+    def atualizar_estilo(
+        self
+    ):
+
+
+        if self.ativo:
+
+
+            self.setStyleSheet(
+
+                """
+
+                QPushButton{
+
+                    background:#24183D;
+
+                    color:#FFFFFF;
+
+                    border:none;
+
+                    border-left:4px solid #8B5CF6;
+
+                    text-align:left;
+
+                    padding:12px 16px;
+
+                    border-radius:12px;
+
+                    font-size:15px;
+
+                    font-weight:bold;
+
+                }
+
+
+
+                QPushButton:hover{
+
+                    background:#30204F;
+
+                }
+
+
+                """
+
+            )
+
+
+
+        else:
+
+
+            self.setStyleSheet(
+
+                """
+
+                QPushButton{
+
+                    background:transparent;
+
+                    color:#A1A1AA;
+
+                    border:none;
+
+                    text-align:left;
+
+                    padding:12px 16px;
+
+                    border-radius:12px;
+
+                    font-size:15px;
+
+                }
+
+
+
+                QPushButton:hover{
+
+                    background:#1E1E1E;
+
+                    color:white;
+
+                }
+
+
+
+                QPushButton:pressed{
+
+                    background:#2A2A2A;
+
+                    color:white;
+
+                }
+
+
+                """
+
+            )

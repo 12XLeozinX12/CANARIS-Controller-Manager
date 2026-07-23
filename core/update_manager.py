@@ -10,16 +10,19 @@ class UpdateManager:
     def __init__(self):
 
         self.url = (
+
             "https://raw.githubusercontent.com/"
             "12XLeozinX12/"
             "CANARIS-Controller-Manager/"
             "main/update.json"
+
         )
 
 
 
 
     def versao_atual(self):
+
 
         try:
 
@@ -29,10 +32,13 @@ class UpdateManager:
                 encoding="utf-8"
             ) as arquivo:
 
+
                 return arquivo.read().strip()
 
 
+
         except:
+
 
             return "UNKNOWN"
 
@@ -46,8 +52,8 @@ class UpdateManager:
         nova
     ):
 
-        return atual != nova
 
+        return atual != nova
 
 
 
@@ -55,40 +61,62 @@ class UpdateManager:
 
     def verificar_atualizacao(self):
 
+
         try:
 
+
             resposta = urllib.request.urlopen(
+
                 self.url,
+
                 timeout=5
+
             )
 
 
             dados = json.loads(
-                resposta.read()
-            )
 
+                resposta.read()
+
+            )
 
 
             atual = self.versao_atual()
 
-            nova = dados["version"]
+
+            nova = dados.get(
+
+                "version",
+
+                "UNKNOWN"
+
+            )
 
 
 
             if self.comparar(
+
                 atual,
+
                 nova
+
             ):
 
 
                 return {
 
+
                     "update": True,
+
 
                     "version": nova,
 
+
                     "download":
-                    dados["download"],
+                    dados.get(
+                        "download"
+                    ),
+
 
                     "changelog":
                     dados.get(
@@ -101,7 +129,9 @@ class UpdateManager:
 
 
 
+
         except Exception as erro:
+
 
             print(
                 "Erro update:",
@@ -113,9 +143,12 @@ class UpdateManager:
 
         return {
 
+
             "update": False
 
+
         }
+
 
 
 

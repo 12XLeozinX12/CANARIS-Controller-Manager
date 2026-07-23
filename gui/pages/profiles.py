@@ -4,13 +4,18 @@ from PySide6.QtWidgets import (
     QLabel,
     QListWidget,
     QPushButton,
-    QMessageBox
+    QMessageBox,
+    QHBoxLayout,
+    QFrame
 )
 
+from PySide6.QtCore import Qt
 
 from core.profile_manager import ProfileManager
 from gui.dialogs.edit_profile import EditProfile
 from core.language_manager import language
+
+from gui.widgets.notification import notification
 
 
 
@@ -30,7 +35,7 @@ class Profiles(QWidget):
 
         self.janela_edicao = None
 
-
+        self.perfil_selecionado = None
 
         self.init_ui()
 
@@ -46,10 +51,42 @@ class Profiles(QWidget):
 
 
 
+
+
+
+
     def init_ui(self):
 
 
-        self.layout = QVBoxLayout()
+        self.layout = QVBoxLayout(
+            self
+        )
+
+
+
+        self.layout.setContentsMargins(
+
+            30,
+
+            30,
+
+            30,
+
+            30
+
+        )
+
+
+
+        self.layout.setSpacing(
+
+            15
+
+        )
+
+
+
+
 
 
 
@@ -57,8 +94,113 @@ class Profiles(QWidget):
 
 
 
+        self.titulo.setStyleSheet(
+
+            """
+
+            color:#8B5CF6;
+
+            font-size:28px;
+
+            font-weight:bold;
+
+            """
+
+        )
+
+
+
+
+
+
+
+
         self.lista = QListWidget()
 
+        self.lista.currentRowChanged.connect(
+
+            self.mostrar_detalhes
+
+        )
+
+        self.lista.setStyleSheet(
+
+            """
+
+            QListWidget{
+
+                background:#171717;
+
+                color:white;
+
+                border-radius:12px;
+
+                padding:10px;
+
+            }
+
+
+            QListWidget::item{
+
+                padding:10px;
+
+            }
+
+
+            QListWidget::item:selected{
+
+                background:#8B5CF6;
+
+            }
+
+            """
+
+        )
+
+        # =========================
+        # DETALHES DO PERFIL
+        # =========================
+
+        self.card_detalhes = QFrame()
+
+        self.card_detalhes.setStyleSheet("""
+        QFrame{
+
+        background:#0B0B12;
+
+        border-radius:18px;
+
+        padding:15px;
+
+        }
+
+        QLabel{
+
+        color:white;
+
+        font-size:15px;
+
+        }
+
+        """)
+
+        detalhes_layout = QVBoxLayout(
+            self.card_detalhes
+        )
+
+        self.detalhes = QLabel()
+
+        self.detalhes.setWordWrap(
+            True
+        )
+
+        detalhes_layout.addWidget(
+            self.detalhes
+        )
+
+        self.layout.addWidget(
+            self.card_detalhes
+        )
 
 
         self.editar = QPushButton()
@@ -66,6 +208,28 @@ class Profiles(QWidget):
 
 
         self.excluir = QPushButton()
+
+
+
+
+
+
+        self.editar.setStyleSheet(
+
+            self.botao_style()
+
+        )
+
+
+        self.excluir.setStyleSheet(
+
+            self.botao_style()
+
+        )
+
+
+
+
 
 
 
@@ -87,11 +251,15 @@ class Profiles(QWidget):
 
 
 
+
+
+
         self.layout.addWidget(
 
             self.titulo
 
         )
+
 
 
         self.layout.addWidget(
@@ -101,11 +269,13 @@ class Profiles(QWidget):
         )
 
 
+
         self.layout.addWidget(
 
             self.editar
 
         )
+
 
 
         self.layout.addWidget(
@@ -116,18 +286,56 @@ class Profiles(QWidget):
 
 
 
-        self.setLayout(
-
-            self.layout
-
-        )
-
 
 
         self.atualizar_textos()
 
 
+
         self.carregar_perfis()
+
+
+
+
+
+
+
+
+
+
+    def botao_style(self):
+
+
+        return """
+
+        QPushButton{
+
+            background:#8B5CF6;
+
+            color:white;
+
+            border:none;
+
+            padding:12px;
+
+            border-radius:12px;
+
+            font-size:15px;
+
+        }
+
+
+        QPushButton:hover{
+
+            background:#A78BFA;
+
+        }
+
+        """
+
+
+
+
 
 
 
@@ -148,14 +356,14 @@ class Profiles(QWidget):
 
             self.editar.setText(
 
-                "Editar Perfil"
+                "✏ Editar Perfil"
 
             )
 
 
             self.excluir.setText(
 
-                "Excluir Perfil"
+                "🗑 Excluir Perfil"
 
             )
 
@@ -172,16 +380,18 @@ class Profiles(QWidget):
 
             self.editar.setText(
 
-                "Edit Profile"
+                "✏ Edit Profile"
 
             )
 
 
             self.excluir.setText(
 
-                "Delete Profile"
+                "🗑 Delete Profile"
 
             )
+
+
 
 
 
@@ -192,41 +402,125 @@ class Profiles(QWidget):
     def carregar_perfis(self):
 
 
-        self.lista.clear()
+        try:
+
+
+            self.lista.clear()
 
 
 
-        perfis = (
+            perfis = (
 
-            self.profile_manager
-            .get_profiles()
+                self.profile_manager
 
-        )
-
-
-
-        for perfil in perfis:
-
-
-            texto = (
-
-                f"🎮 {perfil['name']} "
-
-                f"({perfil['type']})"
+                .get_profiles()
 
             )
 
 
-            self.lista.addItem(
 
+            for perfil in perfis:
+
+
+
+                texto = (
+
+                    f"🎮 {perfil['name']} "
+
+                    f"({perfil['type']})"
+
+                )
+
+
+
+                self.lista.addItem(
+
+                    texto
+
+                )
+
+
+
+        except Exception as erro:
+
+
+            notification.error(
+
+                "Erro ao carregar perfis"
+
+            )
+
+    # =========================
+    # MOSTRAR DETALHES
+    # =========================
+
+    def mostrar_detalhes(self, indice):
+
+        if indice < 0:
+            self.detalhes.setText(
+                "Nenhum perfil selecionado"
+            )
+
+            return
+
+        try:
+
+            perfil = (
+
+                self.profile_manager
+
+                .profiles[indice]
+
+            )
+
+            texto = f"""
+
+    🎮 Nome:
+    {perfil.get('name', '-')}
+
+
+    Tipo:
+    {perfil.get('type', '-')}
+
+
+    GUID:
+    {perfil.get('guid', '-')}
+
+
+
+    ⚙ Calibração:
+
+    Left:
+    {perfil.get('calibration', {}).get('deadzone_left', 0) * 100:.0f}%
+
+
+    Right:
+    {perfil.get('calibration', {}).get('deadzone_right', 0) * 100:.0f}%
+
+
+
+    🎮 Controle:
+
+
+    Botões:
+    {len(perfil.get('buttons', {}))}
+
+
+    Eixos:
+    {len(perfil.get('axes', {}))}
+
+    """
+
+            self.detalhes.setText(
                 texto
-
             )
 
 
+        except Exception as erro:
 
-
-
+            notification.error(
+                str(erro)
+            )
 
 
     def editar_perfil(self):
@@ -240,32 +534,71 @@ class Profiles(QWidget):
 
 
 
+
         if indice < 0:
+
+
+
+            notification.warning(
+
+                "Selecione um perfil primeiro"
+
+            )
 
 
             return
 
 
 
-        perfil = (
-
-            self.profile_manager
-            .profiles[indice]
-
-        )
 
 
 
-        self.janela_edicao = EditProfile(
 
-            perfil,
-
-            self.profile_manager
-
-        )
+        try:
 
 
-        self.janela_edicao.show()
+            perfil = (
+
+                self.profile_manager
+
+                .profiles[indice]
+
+            )
+
+
+
+            self.janela_edicao = EditProfile(
+
+                perfil,
+
+                self.profile_manager
+
+            )
+
+
+
+            self.janela_edicao.show()
+
+
+
+            notification.info(
+
+                "Editando perfil..."
+
+            )
+
+
+
+        except Exception:
+
+
+            notification.error(
+
+                "Não foi possível editar o perfil"
+
+            )
+
+
 
 
 
@@ -284,10 +617,23 @@ class Profiles(QWidget):
 
 
 
+
         if indice < 0:
 
 
+
+            notification.warning(
+
+                "Selecione um perfil primeiro"
+
+            )
+
+
             return
+
+
+
+
 
 
 
@@ -295,11 +641,15 @@ class Profiles(QWidget):
 
             self,
 
-            "CANARIS CM",
+            "CANARIS ™ CM",
 
-            "Excluir este perfil?"
+            "Deseja excluir este perfil?"
 
         )
+
+
+
+
 
 
 
@@ -307,11 +657,36 @@ class Profiles(QWidget):
 
 
 
-            self.profile_manager.delete_profile(
-
-                indice
-
-            )
+            try:
 
 
-            self.carregar_perfis()
+
+                self.profile_manager.delete_profile(
+
+                    indice
+
+                )
+
+
+
+                self.carregar_perfis()
+
+
+
+                notification.success(
+
+                    "Perfil excluído com sucesso!"
+
+                )
+
+
+
+            except Exception:
+
+
+
+                notification.error(
+
+                    "Erro ao excluir perfil"
+
+                )

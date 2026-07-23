@@ -7,56 +7,74 @@ LIGHT_THEME = """
 QMainWindow,
 QWidget {
 
-background:#f5f5f5;
+    background:#F5F5F5;
 
-color:#111;
+    color:#111111;
 
 }
+
 
 
 QLabel {
 
-color:#111;
+    color:#111111;
 
 }
+
 
 
 QPushButton {
 
-background:#8B5CF6;
+    background:#8B5CF6;
 
-color:white;
+    color:white;
 
-border-radius:10px;
+    border:none;
 
-padding:10px;
+    border-radius:10px;
+
+    padding:10px;
 
 }
+
 
 
 QPushButton:hover {
 
-background:#7C3AED;
+    background:#7C3AED;
 
 }
+
+
 
 QComboBox,
 QSpinBox {
 
-background:white;
+    background:white;
 
-color:#111;
+    color:#111111;
 
-border-radius:8px;
+    border-radius:8px;
 
-padding:6px;
+    padding:6px;
 
 }
 
 
+
 QCheckBox {
 
-color:#111;
+    color:#111111;
+
+}
+
+
+
+QFrame {
+
+    background:white;
+
+    border-radius:18px;
 
 }
 
@@ -66,28 +84,72 @@ color:#111;
 
 
 
+
+
 class ThemeManager:
 
 
+
+    def __init__(self):
+
+
+        self.tema_atual = "Escuro"
+
+
+
+
+
+
     def aplicar(
+
         self,
+
         app,
+
         tema
+
     ):
+
+
+
+        self.tema_atual = tema
+
+
 
 
         if tema == "Claro":
 
+
             app.setStyleSheet(
+
                 LIGHT_THEME
+
             )
+
 
 
         else:
 
+
             app.setStyleSheet(
+
                 DARK_THEME
+
             )
+
+
+
+
+
+
+
+    def atual(self):
+
+
+        return self.tema_atual
+
+
+
 
 
 

@@ -2,20 +2,21 @@ from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
     QLabel,
-    QPushButton,
     QComboBox,
     QCheckBox,
     QSpinBox,
-    QMessageBox
+    QPushButton,
+    QApplication
 )
-
-
-from PySide6.QtWidgets import QApplication
 
 
 from core.settings_manager import settings
 from core.theme_manager import theme
 from core.startup_manager import startup
+from core.language_manager import language
+
+
+from gui.widgets.notification import notification
 
 
 
@@ -28,13 +29,20 @@ class Settings(QWidget):
 
         super().__init__()
 
-        self.criar_interface()
+
+        self.init_ui()
+
+
+        language.idioma_alterado.connect(
+            self.atualizar_textos
+        )
 
 
 
 
 
-    def criar_interface(self):
+
+    def init_ui(self):
 
 
         layout = QVBoxLayout(
@@ -42,12 +50,26 @@ class Settings(QWidget):
         )
 
 
-        titulo = QLabel(
-            "⚙ Configurações CANARIS ™"
+        layout.setContentsMargins(
+            30,
+            30,
+            30,
+            30
         )
 
 
-        titulo.setStyleSheet(
+        layout.setSpacing(
+            15
+        )
+
+
+
+
+
+        self.titulo = QLabel()
+
+
+        self.titulo.setStyleSheet(
             """
             color:#8B5CF6;
             font-size:30px;
@@ -57,8 +79,29 @@ class Settings(QWidget):
 
 
         layout.addWidget(
-            titulo
+            self.titulo
         )
+
+
+
+
+
+
+        self.subtitulo = QLabel()
+
+
+        self.subtitulo.setStyleSheet(
+            """
+            color:#999;
+            font-size:14px;
+            """
+        )
+
+
+        layout.addWidget(
+            self.subtitulo
+        )
+
 
 
 
@@ -67,10 +110,11 @@ class Settings(QWidget):
         # TEMA
 
 
+        self.tema_label = QLabel()
+
+
         layout.addWidget(
-            QLabel(
-                "Tema"
-            )
+            self.tema_label
         )
 
 
@@ -78,24 +122,17 @@ class Settings(QWidget):
 
 
         self.tema.addItems(
-
             [
-
                 "Escuro",
-
                 "Claro"
-
             ]
-
         )
 
 
         self.tema.setCurrentText(
-
             settings.get(
                 "tema"
             )
-
         )
 
 
@@ -111,10 +148,11 @@ class Settings(QWidget):
         # IDIOMA
 
 
+        self.idioma_label = QLabel()
+
+
         layout.addWidget(
-            QLabel(
-                "Idioma"
-            )
+            self.idioma_label
         )
 
 
@@ -122,24 +160,17 @@ class Settings(QWidget):
 
 
         self.idioma.addItems(
-
             [
-
                 "Português",
-
                 "English"
-
             ]
-
         )
 
 
         self.idioma.setCurrentText(
-
             settings.get(
                 "idioma"
             )
-
         )
 
 
@@ -152,20 +183,17 @@ class Settings(QWidget):
 
 
 
+
         # SOM
 
 
-        self.som = QCheckBox(
-            "🔊 Sons do CANARIS"
-        )
+        self.som = QCheckBox()
 
 
         self.som.setChecked(
-
             settings.get(
                 "som"
             )
-
         )
 
 
@@ -178,20 +206,17 @@ class Settings(QWidget):
 
 
 
+
         # VIBRAÇÃO
 
 
-        self.vibracao = QCheckBox(
-            "🎮 Vibração dos controles"
-        )
+        self.vibracao = QCheckBox()
 
 
         self.vibracao.setChecked(
-
             settings.get(
                 "vibracao"
             )
-
         )
 
 
@@ -204,20 +229,17 @@ class Settings(QWidget):
 
 
 
-        # WINDOWS
+
+        # START WINDOWS
 
 
-        self.start = QCheckBox(
-            "🚀 Iniciar com Windows"
-        )
+        self.start = QCheckBox()
 
 
         self.start.setChecked(
-
             settings.get(
                 "iniciar_windows"
             )
-
         )
 
 
@@ -234,12 +256,11 @@ class Settings(QWidget):
         # TAXA
 
 
+        self.taxa_label = QLabel()
+
+
         layout.addWidget(
-
-            QLabel(
-                "Atualização do Controller Lab"
-            )
-
+            self.taxa_label
         )
 
 
@@ -254,11 +275,9 @@ class Settings(QWidget):
 
 
         self.taxa.setValue(
-
             settings.get(
                 "taxa_atualizacao"
             )
-
         )
 
 
@@ -277,22 +296,114 @@ class Settings(QWidget):
 
 
 
-        salvar = QPushButton(
-            "💾 Salvar Configurações"
-        )
+        # SALVAR
 
 
-        salvar.clicked.connect(
+        self.salvar_btn = QPushButton()
+
+
+        self.salvar_btn.clicked.connect(
             self.salvar
         )
 
 
         layout.addWidget(
-            salvar
+            self.salvar_btn
         )
 
 
         layout.addStretch()
+
+
+
+        self.atualizar_textos()
+
+
+
+
+
+
+
+    def atualizar_textos(self):
+
+
+        self.titulo.setText(
+
+            language.texto(
+                "settings_titulo"
+            )
+
+        )
+
+
+        self.subtitulo.setText(
+            "Personalize o CANARIS ™ Controller Manager"
+        )
+
+
+        self.tema_label.setText(
+
+            language.texto(
+                "tema"
+            )
+
+        )
+
+
+        self.idioma_label.setText(
+
+            language.texto(
+                "idioma"
+            )
+
+        )
+
+
+        self.som.setText(
+
+            language.texto(
+                "som"
+            )
+
+        )
+
+
+        self.vibracao.setText(
+
+            language.texto(
+                "vibracao"
+            )
+
+        )
+
+
+        self.start.setText(
+
+            language.texto(
+                "iniciar_windows"
+            )
+
+        )
+
+
+        self.taxa_label.setText(
+
+            language.texto(
+                "taxa_atualizacao"
+            )
+
+        )
+
+
+        self.salvar_btn.setText(
+
+            language.texto(
+                "salvar"
+            )
+
+        )
+
+
 
 
 
@@ -303,95 +414,132 @@ class Settings(QWidget):
     def salvar(self):
 
 
-        settings.set(
-
-            "tema",
-
-            self.tema.currentText()
-
-        )
+        try:
 
 
-        settings.set(
-
-            "idioma",
-
-            self.idioma.currentText()
-
-        )
+            settings.set(
+                "tema",
+                self.tema.currentText()
+            )
 
 
 
-        settings.set(
-
-            "som",
-
-            self.som.isChecked()
-
-        )
+            idioma_visual = self.idioma.currentText()
 
 
-        settings.set(
 
-            "vibracao",
-
-            self.vibracao.isChecked()
-
-        )
+            settings.set(
+                "idioma",
+                idioma_visual
+            )
 
 
-        settings.set(
 
-            "iniciar_windows",
+            if idioma_visual == "English":
 
-            self.start.isChecked()
+                language.mudar_idioma(
+                    "en"
+                )
 
-        )
 
+            else:
 
-        settings.set(
-
-            "taxa_atualizacao",
-
-            self.taxa.value()
-
-        )
+                language.mudar_idioma(
+                    "pt"
+                )
 
 
 
 
 
 
-        if self.start.isChecked():
-
-            startup.ativar()
-
-        else:
-
-            startup.desativar()
+            settings.set(
+                "som",
+                self.som.isChecked()
+            )
 
 
 
+            settings.set(
+                "vibracao",
+                self.vibracao.isChecked()
+            )
 
 
 
-        theme.aplicar(
-
-            QApplication.instance(),
-
-            self.tema.currentText()
-
-        )
+            settings.set(
+                "iniciar_windows",
+                self.start.isChecked()
+            )
 
 
 
+            settings.set(
+                "taxa_atualizacao",
+                self.taxa.value()
+            )
 
-        QMessageBox.information(
 
-            self,
 
-            "CANARIS ™",
 
-            "Configurações salvas!"
 
-        )
+
+
+            if self.start.isChecked():
+
+
+                startup.ativar()
+
+
+                notification.info(
+                    "CANARIS iniciado com o Windows."
+                )
+
+
+            else:
+
+
+                startup.desativar()
+
+
+                notification.info(
+                    "Inicialização automática desativada."
+                )
+
+
+
+
+
+
+
+            theme.aplicar(
+
+                QApplication.instance(),
+
+                self.tema.currentText()
+
+            )
+
+
+
+
+
+
+
+            notification.success(
+                "Configurações salvas com sucesso!"
+            )
+
+
+
+
+
+
+        except Exception as erro:
+
+
+            notification.error(
+
+                f"Erro ao salvar configurações: {erro}"
+
+            )

@@ -1,7 +1,7 @@
 import json
 import os
 
-
+from core.controller_profile import ControllerProfiles
 
 class ProfileManager:
 
@@ -149,20 +149,154 @@ class ProfileManager:
 
             )
 
-
-
-
-
-
-
-
     def create_profile(
 
-        self,
+            self,
 
-        controller
-
+            controller
     ):
+
+        modelo = ControllerProfiles.detectar(
+
+            controller.get(
+                "name",
+                ""
+            ),
+
+            controller.get(
+                "guid",
+                ""
+            )
+
+        )
+
+        perfil = {
+
+            "name":
+
+                controller.get(
+
+                    "name",
+
+                    controller.get(
+
+                        "nome",
+
+                        "Novo Controle"
+
+                    )
+
+                ),
+
+            "id":
+
+                controller.get(
+
+                    "id",
+
+                    ""
+
+                ),
+
+            "guid":
+
+                controller.get(
+
+                    "guid",
+
+                    ""
+
+                ),
+
+            "type":
+
+                controller.get(
+
+                    "type",
+
+                    controller.get(
+
+                        "tipo",
+
+                        "Generic"
+
+                    )
+
+                ),
+
+            "controller": {
+
+                "buttons":
+
+                    controller.get(
+
+                        "buttons",
+
+                        0
+
+                    ),
+
+                "axes":
+
+                    controller.get(
+
+                        "axes",
+
+                        0
+
+                    )
+
+            },
+
+            "calibration": {
+
+                "deadzone_left":
+
+                    0.08,
+
+                "deadzone_right":
+
+                    0.08,
+
+                "trigger_deadzone":
+
+                    0.05
+
+            },
+
+            "mapping": {},
+
+            "settings": {
+
+                "vibration":
+
+                    True,
+
+                "sensitivity":
+
+                    100
+
+            },
+
+            "statistics": {
+
+                "hours":
+
+                    0
+
+            }
+
+        }
+
+        self.profiles.append(
+
+            perfil
+
+        )
+
+        self.save()
+
+        return perfil
 
 
 
@@ -205,11 +339,19 @@ class ProfileManager:
 
 
 
-            "buttons":{},
+            "buttons":
+
+    modelo["buttons"],
 
 
+"axes":
 
-            "axes":{},
+    modelo["axes"],
+
+
+"dpad":
+
+    modelo["dpad"],
 
 
 
@@ -286,9 +428,94 @@ class ProfileManager:
 
         self.save()
 
+    def update_profile(
+            self,
+            index,
+            dados
+    ):
+
+        if index < 0:
+            return False
+
+        if index >= len(
+                self.profiles
+        ):
+            return False
+
+        self.profiles[index].update(
+            dados
+        )
+
+        self.save()
+
+        return True
+
+
+    # =========================
+    # BUSCAR PERFIL PELO GUID
+    # =========================
+
+    def find_by_guid(
+            self,
+            guid
+    ):
+
+        if not guid:
+
+            return None
+
+
+        for perfil in self.profiles:
+
+            if perfil.get(
+                "guid"
+            ) == guid:
+
+                return perfil
+
+
+        return None
 
 
 
+    # =========================
+    # ATUALIZAR DADOS DO CONTROLE
+    # =========================
+
+    def update_controller_data(
+            self,
+            guid,
+            categoria,
+            dados
+    ):
+
+
+        perfil = self.find_by_guid(
+            guid
+        )
+
+
+        if not perfil:
+
+            return False
+
+
+
+        if categoria not in perfil:
+
+            perfil[categoria] = {}
+
+
+
+        perfil[categoria].update(
+            dados
+        )
+
+
+        self.save()
+
+
+        return True
 
 
     def clear_all(self):
