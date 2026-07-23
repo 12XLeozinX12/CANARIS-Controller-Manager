@@ -16,8 +16,6 @@ dist/
 # Logs
 logs/
 
-# Banco local
-*.db
 
 # Arquivos temporários
 *.tmp
